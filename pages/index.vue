@@ -343,7 +343,7 @@ const experiences = ref([
                 name="material-symbols:calendar-month"
                 class="text-primary group-hover:text-primary-5"></Icon>
               <span
-                class="text-sm font-medium text-primary-dark group-hover:text-primary-5"
+                class="text-sm font-medium text-primary-dark/80 group-hover:text-primary-5"
                 >{{ education.date }}</span
               >
             </div>
@@ -353,7 +353,7 @@ const experiences = ref([
               {{ education.name }} - {{ education.school }}
             </h3>
             <p
-              class="text-primary-dark font-medium text-lg group-hover:text-primary-5">
+              class="text-primary-dark/80 font-medium text-lg group-hover:text-primary-5">
               {{ education.description }}
             </p>
             <span
@@ -381,7 +381,7 @@ const experiences = ref([
                 name="material-symbols:calendar-month"
                 class="text-primary group-hover:text-primary-5"></Icon>
               <span
-                class="text-sm font-medium text-primary-dark group-hover:text-primary-5"
+                class="text-sm font-medium text-primary-dark/80 group-hover:text-primary-5"
                 >{{ experience.startDate }}-{{ experience.endDate }}</span
               >
             </div>
@@ -391,7 +391,7 @@ const experiences = ref([
               {{ experience.title }}-{{ experience.company }}
             </h3>
             <p
-              class="text-primary-dark font-medium text-lg group-hover:text-primary-5">
+              class="text-primary-dark/80 font-medium text-lg group-hover:text-primary-5">
               {{ experience.description }}
             </p>
             <span
@@ -427,7 +427,7 @@ const experiences = ref([
           </h2>
 
           <p
-            class="font-medium text-primary-dark group-hover:text-primary-5 text-lg">
+            class="font-medium text-primary-dark/80 group-hover:text-primary-5 text-lg">
             {{ project.description }}
           </p>
           <div class="flex justify-between">
