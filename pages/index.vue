@@ -107,14 +107,14 @@ const experiences = ref([
         <span class="text-2xl text-primary-1 font-bold">Hello, I am </span>
         <br />
         <h1
-          class="lg:text-6xl md:text-4xl text-3xl -mt-0 font-bold text-primary">
+          class="lg:text-6xl md:text-4xl text-3xl -m-0 font-bold text-primary">
           Hodadis Birhan
         </h1>
-        <p class="text-primary-dark -mt-1 mb-7 text-lg font-medium">
+        <p class="text-primary-dark mt-8 text-lg font-medium">
           Bachelor's Degree in Software Engineering At Bahir Dar University Sep
           2019 – July 2023 CGPA: 3.95
         </p>
-        <div class="flex gap-3 md:items-start items-center flex-wrap">
+        <div class="flex gap-3 md:items-start mt-4 items-center flex-wrap">
           <a
             href="https://github.com/Hodadisbirhan"
             class="w-[2rem] group h-[2rem] rounded-[100%] border-2 border-primary/80 hover:bg-primary/80 border-solid flex cu justify-center items-center"
@@ -269,7 +269,8 @@ const experiences = ref([
           data-aos-duration="3000"
           v-for="skill in skills"
           :key="skill.name">
-          <div class="flex justify-between text-primary-dark">
+          <div
+            class="flex justify-between text-primary-dark/80 text-sm font-medium">
             <span>{{ skill.name }}</span>
             <span>{{ skill.level }}% </span>
           </div>
@@ -291,7 +292,7 @@ const experiences = ref([
         Service
       </h1>
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 w-auto gap-6">
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 w-auto gap-6">
         <div
           class="px-3 md:w-[25rem] border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
           v-for="service in services"
@@ -312,7 +313,7 @@ const experiences = ref([
           </h2>
 
           <p
-            class="font-medium text-primary-dark/80 group-hover:text-primary-5 text-xs md:text-base">
+            class="font-medium text-primary-dark/80 group-hover:text-primary-5 text-xs md:text-sm">
             {{ service.description }}
           </p>
         </div>
@@ -342,7 +343,7 @@ const experiences = ref([
                 name="material-symbols:calendar-month"
                 class="text-primary group-hover:text-primary-5"></Icon>
               <span
-                class="text-sm font-medium text-primary-dark/80 group-hover:text-primary-5"
+                class="text-xs font-medium text-primary-dark/80 group-hover:text-primary-5"
                 >{{ education.date }}</span
               >
             </div>
@@ -352,7 +353,7 @@ const experiences = ref([
               {{ education.name }} - {{ education.school }}
             </h3>
             <p
-              class="text-primary-dark/80 font-medium lg:text-base tracking-wide text-sm group-hover:text-primary-5">
+              class="text-primary-dark/80 font-medium md:text-sm tracking-wide text-xs group-hover:text-primary-5">
               {{ education.description }}
             </p>
             <span
@@ -380,7 +381,7 @@ const experiences = ref([
                 name="material-symbols:calendar-month"
                 class="text-primary group-hover:text-primary-5 text-primary-dark/60"></Icon>
               <span
-                class="text-sm font-medium text-primary-dark/60 group-hover:text-primary-5"
+                class="text-xs font-medium text-primary-dark/60 group-hover:text-primary-5"
                 >{{ experience.startDate }}-{{ experience.endDate }}</span
               >
             </div>
@@ -390,7 +391,7 @@ const experiences = ref([
               {{ experience.title }}-{{ experience.company }}
             </h3>
             <p
-              class="text-primary-dark/80 font-medium tracking-wide text-sm lg:text-base group-hover:text-primary-5">
+              class="text-primary-dark/80 font-medium tracking-wide md:text-sm text-xs group-hover:text-primary-5">
               {{ experience.description }}
             </p>
             <span
@@ -406,10 +407,11 @@ const experiences = ref([
       <h1 class="text-primary lg:text-5xl md:text-4xl text-3xl font-bold">
         Project
       </h1>
+
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 justify-center gap-6">
+        class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 place-content-center justify-center">
         <div
-          class="px-3 md:w-[30rem] w-[90%] border border-solid border-primary-5 group hover:bg-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4"
+          class="px-3 md:w-[30rem] w-[90%] border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
           v-for="project in projects"
           :key="project.title">
           <div
@@ -426,27 +428,25 @@ const experiences = ref([
           </h2>
 
           <p
-            class="font-medium text-primary-dark/80 tracking-wide group-hover:text-primary-5 text-sm lg:text-base text-pretty">
+            class="font-medium text-primary-dark/80 tracking-wide group-hover:text-primary-5 text-xs md:text-sm text-pretty first-letter:uppercase">
             {{ project.description }}
           </p>
-          <div class="flex justify-between">
+          <div class="flex flex-1 items-end justify-between text-primary-2">
             <div class="flex items-center justify-center gap-1">
               <Icon
                 name="material-symbols:calendar-month"
-                class="group-hover:text-primary-5 text-primary"></Icon>
-              <span
-                class="text-sm text-primary-lite group-hover:text-primary-5 font-medium"
-                >{{ project.date }}</span
-              >
+                class="group-hover:text-primary-5 text-primary text-sm"></Icon>
+              <span class="text-xs group-hover:text-primary-5 font-medium">{{
+                project.date
+              }}</span>
             </div>
             <div class="flex items-center justify-center gap-1">
               <Icon
                 name="mdi:code-tags"
                 class="group-hover:text-primary-5 text-primary"></Icon>
-              <span
-                class="text-sm text-primary-lite group-hover:text-primary-5 font-medium"
-                >{{ project.size }}</span
-              >
+              <span class="text-xs group-hover:text-primary-5 font-medium">{{
+                project.size
+              }}</span>
             </div>
             <a
               :href="project.link"
@@ -454,9 +454,9 @@ const experiences = ref([
               target="_blank">
               <Icon
                 name="mdi:link-variant"
-                class="group-hover:text-primary-5 text-primary"></Icon>
+                class="group-hover:text-primary-5 hover:underline text-primary text-sm"></Icon>
               <span
-                class="text-sm text-primary-lite group-hover:text-primary-5 font-medium"
+                class="text-xs group-hover:text-primary-5 hover:underline font-medium"
                 >View</span
               >
             </a>
