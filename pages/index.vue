@@ -107,7 +107,7 @@ const experiences = ref([
         <span class="text-2xl text-primary-1 font-bold">Hello, I am </span>
         <br />
         <h1
-          class="lg:text-6xl md:text-4xl text-3xl -mt-0 font-extrabold text-primary">
+          class="lg:text-6xl md:text-4xl text-3xl -mt-0 font-bold text-primary">
           Hodadis Birhan
         </h1>
         <p class="text-primary-dark -mt-1 mb-7 text-lg font-medium">
@@ -232,8 +232,7 @@ const experiences = ref([
         <div
           class="flex flex-col items-center md:items-start md:flex-1"
           data-aos="fade-left">
-          <h1
-            class="font-extrabold md:text-4xl text-3xl lg:text-5xl text-primary">
+          <h1 class="font-bold md:text-4xl text-3xl lg:text-5xl text-primary">
             About Me
           </h1>
           <h2
@@ -260,7 +259,7 @@ const experiences = ref([
       id="skill"
       class="w-full min-h-[30rem] justify-center">
       <h1
-        class="text-primary text-center lg:text-5xl md:text-4xl text-3xl font-extrabold">
+        class="text-primary text-center lg:text-5xl md:text-4xl text-3xl font-bold">
         Skills
       </h1>
       <div class="grid md:grid-cols-2 grid-cols-1 gap-16">
@@ -288,7 +287,7 @@ const experiences = ref([
     <section
       id="service"
       class="flex flex-col items-center min-h-[40rem] pt-[8rem]">
-      <h1 class="text-primary lg:text-5xl md:text-4xl text-3xl font-extrabold">
+      <h1 class="text-primary lg:text-5xl md:text-4xl text-3xl font-bold">
         Service
       </h1>
       <div
@@ -313,7 +312,7 @@ const experiences = ref([
           </h2>
 
           <p
-            class="font-medium text-primary-dark/80 group-hover:text-primary-5 text-lg">
+            class="font-medium text-primary-dark/80 group-hover:text-primary-5 text-xs md:text-base">
             {{ service.description }}
           </p>
         </div>
@@ -328,7 +327,7 @@ const experiences = ref([
 
         <div class="flex relative flex-col gap-4">
           <h2
-            class="lg:text-5xl md:text-4xl text-3xl font-extrabold text-primary absolute -top-28 left-0">
+            class="lg:text-5xl md:text-4xl text-3xl font-bold text-primary absolute -top-28 left-0">
             Education
           </h2>
           <div
@@ -349,11 +348,11 @@ const experiences = ref([
             </div>
 
             <h3
-              class="text-xl p-0 m-0 font-bold text-primary/50 group-hover:text-primary-5">
+              class="text-xl p-0 m-0 font-semibold text-primary/50 group-hover:text-primary-5">
               {{ education.name }} - {{ education.school }}
             </h3>
             <p
-              class="text-primary-dark/80 font-medium text-lg group-hover:text-primary-5">
+              class="text-primary-dark/80 font-medium lg:text-base tracking-wide text-sm group-hover:text-primary-5">
               {{ education.description }}
             </p>
             <span
@@ -366,7 +365,7 @@ const experiences = ref([
 
         <div class="relative flex flex-col gap-4">
           <h2
-            class="lg:text-5xl md:text-4xl text-3xl font-extrabold text-primary absolute -top-28 left-0">
+            class="lg:text-5xl md:text-4xl text-3xl font-bold text-primary absolute -top-28 left-0">
             Experiance
           </h2>
           <div
@@ -379,19 +378,19 @@ const experiences = ref([
             <div class="flex items-center gap-2">
               <Icon
                 name="material-symbols:calendar-month"
-                class="text-primary group-hover:text-primary-5"></Icon>
+                class="text-primary group-hover:text-primary-5 text-primary-dark/60"></Icon>
               <span
-                class="text-sm font-medium text-primary-dark/80 group-hover:text-primary-5"
+                class="text-sm font-medium text-primary-dark/60 group-hover:text-primary-5"
                 >{{ experience.startDate }}-{{ experience.endDate }}</span
               >
             </div>
 
             <h3
-              class="text-xl p-0 m-0 font-bold text-primary/50 group-hover:text-primary-5">
+              class="text-xl p-0 m-0 font-semibold text-primary/50 group-hover:text-primary-5">
               {{ experience.title }}-{{ experience.company }}
             </h3>
             <p
-              class="text-primary-dark/80 font-medium text-lg group-hover:text-primary-5">
+              class="text-primary-dark/80 font-medium tracking-wide text-sm lg:text-base group-hover:text-primary-5">
               {{ experience.description }}
             </p>
             <span
@@ -404,7 +403,7 @@ const experiences = ref([
     <section
       id="project"
       class="flex flex-col items-center pt-[8rem] min-h-[40rem] justify-center">
-      <h1 class="text-primary lg:text-5xl md:text-4xl text-3xl font-extrabold">
+      <h1 class="text-primary lg:text-5xl md:text-4xl text-3xl font-bold">
         Project
       </h1>
       <div
@@ -427,7 +426,7 @@ const experiences = ref([
           </h2>
 
           <p
-            class="font-medium text-primary-dark/80 group-hover:text-primary-5 text-lg">
+            class="font-medium text-primary-dark/80 tracking-wide group-hover:text-primary-5 text-sm lg:text-base text-pretty">
             {{ project.description }}
           </p>
           <div class="flex justify-between">
@@ -464,6 +463,10 @@ const experiences = ref([
           </div>
         </div>
       </div>
+    </section>
+    <section id="contact">
+      <h2>Contacts</h2>
+      <div></div>
     </section>
   </main>
 </template>

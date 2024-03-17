@@ -41,7 +41,7 @@ module.exports = {
         "secondary-dark-2": "#1B2637",
       },
       fontFamily: {
-        display: ["Inter", "sans-serif"],
+        display: ["Roboto", "sans-serif"],
       },
     },
   },
