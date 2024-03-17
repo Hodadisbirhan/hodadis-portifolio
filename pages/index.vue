@@ -91,7 +91,7 @@ const experiences = ref([
     startDate: "June 2022",
     endDate: "September 2022",
     description:
-      "During my internship period at Minab IT Solutions from June 2022 to September 2022, I was immersed in an enriching environment where I honed my skills in front-end application development using Vue.js and Nuxt.js, particularly focusing on creating server-side rendered (SSR) applications. Additionally, I gained proficiency in Vite and Tailwind CSS for efficient and responsive UI development. On the backend side, I delved into backend development using a combination of Golang and Express.js. I worked extensively with databases, including Hasura, PostgreSQL, and SQL, learning how to design efficient schema and execute complex queries to optimize data retrieval and manipulation. Moreover, I had the opportunity to delve into API development using GraphQL, gaining hands-on experience in building robust and flexible APIs to facilitate smooth communication between the frontend and backend components of applications. Throughout the internship, I also familiarized myself with various version control and collaborative tools such as Git, GitLab, and GitHub. These tools played a pivotal role in facilitating seamless collaboration among team members and ensuring efficient management of project repositories. Overall, my internship experience at Minab IT Solution provided me with a comprehensive understanding of modern web development technologies and methodologies, equipping me with the necessary skills to contribute effectively to softwaredevelopment projects in a professional environment.",
+      "During my internship period at Minab IT Solutions from June 2022 to September 2022, I was immersed in an enriching environment where I honed my skills in front-end application development using Vue.js and Nuxt.js, particularly focusing on creating server-side rendered (SSR) applications. Additionally, I gained proficiency in Vite and Tailwind CSS for efficient and responsive UI development. On the backend side, I delved into backend development using a combination of Golang and Express.js. I worked extensively with databases, including Hasura, PostgreSQL, and SQL, learning how to design efficient schema and execute complex queries to optimize data retrieval and manipulation. Moreover, I had the opportunity to delve into API development using GraphQL, gaining hands-on experience in building robust and flexible APIs to facilitate smooth communication between the frontend and backend components of applications. ",
   },
 ]);
 </script>
@@ -171,7 +171,7 @@ const experiences = ref([
         </div>
 
         <button
-          class="font-semibold outline-none mt-4 px-12 py-4 hover:bg-primary-5 hover:text-primary/80 border-primary/80 border-2 border-solid rounded-md shadow-none bg-primary/80 cursor-pointer text-lg text-primary-5">
+          class="font-semibold outline-none mt-4 px-12 py-4 hover:bg-transparent hover:text-primary/80 border-primary/80 border-2 border-solid rounded-md shadow-none bg-primary/80 cursor-pointer text-lg text-primary-5">
           Download CV
         </button>
       </div>
