@@ -8,7 +8,7 @@
       class="fixed backdrop-blur-3xl z-40 max-w-[1920px] top-0 mx-auto md:px-14 px-2 h-[6rem] drop-shadow bg-slate-200/95 left-0 right-0 flex justify-between items-center">
       <nav class="flex justify-between items-center w-full">
         <a
-          href="www.http://localhost:3000"
+          href="https://hodadis.netlify.app"
           class="font-bold text-xl no-underline text-primary cursor-pointer"
           target="_self"
           >Hodadis's</a
