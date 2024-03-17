@@ -61,7 +61,7 @@
       <div class="h-0.5 bg-primary-2"></div>
       <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <div class="flex flex-col items-center justify-center gap-4 mb-4">
-          <h1 class="text-5xl font-bold text-primary/70 m-0">Hodadis</h1>
+          <h1 class="text-3xl font-bold text-primary/50 m-0">Hodadis</h1>
           <span class="text-primary-lite font-semibold"
             >tel: +251995183367</span
           >

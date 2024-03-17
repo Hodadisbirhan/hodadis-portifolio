@@ -1,4 +1,9 @@
 <script setup>
+import { useForm } from "vee-validate";
+const loading = ref(false);
+const error = ref(false);
+const show = ref(false);
+const showMessage = ref("");
 const services = ref([
   {
     icon: "/favicon.ico",
@@ -94,10 +99,52 @@ const experiences = ref([
       "During my internship period at Minab IT Solutions from June 2022 to September 2022, I was immersed in an enriching environment where I honed my skills in front-end application development using Vue.js and Nuxt.js, particularly focusing on creating server-side rendered (SSR) applications. Additionally, I gained proficiency in Vite and Tailwind CSS for efficient and responsive UI development. On the backend side, I delved into backend development using a combination of Golang and Express.js. I worked extensively with databases, including Hasura, PostgreSQL, and SQL, learning how to design efficient schema and execute complex queries to optimize data retrieval and manipulation. Moreover, I had the opportunity to delve into API development using GraphQL, gaining hands-on experience in building robust and flexible APIs to facilitate smooth communication between the frontend and backend components of applications. ",
   },
 ]);
+const { handleSubmit } = useForm();
+
+const submit = handleSubmit(async (value) => {
+  console.log(value);
+  const { email, phone, name, message } = value;
+  loading.value = true;
+  $fetch("/api/sendEmail", {
+    method: "post",
+    body: { from: email, phone, name, text: message },
+  })
+    .then((result) => {
+      show.value = true;
+      error.value = false;
+      showMessage.value = "Thank You " + name + " For Your Feedback!";
+      loading.value = false;
+    })
+    .catch((erro) => {
+      show.value = true;
+      error.value = true;
+      loading.value = false;
+      showMessage.value = "Error Please Check Your Connection and Try Again!";
+    });
+});
+
+watch(show, (newValue) => {
+  if (newValue) {
+    setTimeout(() => {
+      show.value = false;
+    }, 8000);
+  }
+});
 </script>
 
 <template>
   <main class="w-full flex flex-col">
+    <div
+      v-if="show"
+      data-aos="fade-left"
+      class="fixed z-50 top-4 shadow-xl drop-shadow-xl right-1 border-solid border bg-primary-5 rounded px-12 py-4 text-sm"
+      :class="[
+        error
+          ? 'text-red-600  border-red-600'
+          : 'border-primary-2 text-primary-2',
+      ]">
+      {{ showMessage }}
+    </div>
     <section
       class="w-full gap-10 min-h-[30rem] pt-[12rem] md:justify-between md:items-start items-center flex md:flex-row flex-col-reverse relative"
       id="home">
@@ -313,7 +360,7 @@ const experiences = ref([
           </h2>
 
           <p
-            class="font-medium text-primary-dark/80 group-hover:text-primary-5 text-xs md:text-sm">
+            class="font-medium text-primary-dark/50 tracking-wide group-hover:text-primary-5 text-xs md:text-sm">
             {{ service.description }}
           </p>
         </div>
@@ -343,7 +390,7 @@ const experiences = ref([
                 name="material-symbols:calendar-month"
                 class="text-primary group-hover:text-primary-5"></Icon>
               <span
-                class="text-xs font-medium text-primary-dark/80 group-hover:text-primary-5"
+                class="text-xs font-medium text-primary-dark/50 group-hover:text-primary-5"
                 >{{ education.date }}</span
               >
             </div>
@@ -353,7 +400,7 @@ const experiences = ref([
               {{ education.name }} - {{ education.school }}
             </h3>
             <p
-              class="text-primary-dark/80 font-medium md:text-sm tracking-wide text-xs group-hover:text-primary-5">
+              class="text-primary-dark/50 font-medium md:text-sm tracking-wide text-xs group-hover:text-primary-5">
               {{ education.description }}
             </p>
             <span
@@ -381,7 +428,7 @@ const experiences = ref([
                 name="material-symbols:calendar-month"
                 class="text-primary group-hover:text-primary-5 text-primary-dark/60"></Icon>
               <span
-                class="text-xs font-medium text-primary-dark/60 group-hover:text-primary-5"
+                class="text-xs font-medium text-primary-dark/50 group-hover:text-primary-5"
                 >{{ experience.startDate }}-{{ experience.endDate }}</span
               >
             </div>
@@ -391,7 +438,7 @@ const experiences = ref([
               {{ experience.title }}-{{ experience.company }}
             </h3>
             <p
-              class="text-primary-dark/80 font-medium tracking-wide md:text-sm text-xs group-hover:text-primary-5">
+              class="text-primary-dark/50 font-medium tracking-wide md:text-sm text-xs group-hover:text-primary-5">
               {{ experience.description }}
             </p>
             <span
@@ -428,7 +475,7 @@ const experiences = ref([
           </h2>
 
           <p
-            class="font-medium text-primary-dark/80 tracking-wide group-hover:text-primary-5 text-xs md:text-sm text-pretty first-letter:uppercase">
+            class="font-medium text-primary-dark/50 tracking-wide group-hover:text-primary-5 text-xs md:text-sm text-pretty first-letter:uppercase">
             {{ project.description }}
           </p>
           <div class="flex flex-1 items-end justify-between text-primary-2">
@@ -464,9 +511,84 @@ const experiences = ref([
         </div>
       </div>
     </section>
-    <section id="contact">
-      <h2>Contacts</h2>
-      <div></div>
+    <section
+      id="contact"
+      class="flex flex-col lg:flex-row gap-3 pt-[8rem]">
+      <div class="flex flex-col gap-6 flex-1">
+        <h2 class="text-2xl font-bold text-primary">
+          Get <br />
+          In Touch.
+        </h2>
+        <div class="flex flex-row gap-4">
+          <Icon
+            name="material-symbols:call-sharp"
+            class="text-lg text-primary"></Icon>
+          <span class="text-primary-dark/80 text-sm">+251995183367</span>
+        </div>
+        <div class="flex flex-row gap-4">
+          <Icon
+            name="material-symbols:mail-rounded"
+            class="text-lg text-primary">
+          </Icon>
+          <span class="text-primary-dark/80 text-sm"
+            >hodadisbirhan80@gmail.com</span
+          >
+        </div>
+        <div class="flex flex-row gap-4">
+          <Icon
+            name="material-symbols:location-on-rounded"
+            class="text-lg text-primary"></Icon>
+          <span class="text-primary-dark/80 text-sm"
+            >Addis Ababa, Ethiopia</span
+          >
+        </div>
+      </div>
+      <form
+        class="flex-1 px-3 py-14 bg-primary-4 border border-primary-5 border-solid rounded-md"
+        @submit.prevent="submit">
+        <h3 class="text-xl text-center font-semibold text-primary">
+          Contact Me
+        </h3>
+
+        <div class="flex flex-col gap-4 px-8 py-3">
+          <HField
+            id="name"
+            type="text"
+            rule="required"
+            placeholder="Full Name"
+            name="name"
+            label="Name" />
+          <HField
+            id="phone"
+            rule="required"
+            type="tel"
+            placeholder="+251995182267"
+            name="phone"
+            label="Phone Number" />
+
+          <HField
+            id="email"
+            rule="required|email"
+            type="email"
+            placeholder="example@gmail.com"
+            name="email"
+            label="Email" />
+          <HTextArea
+            id="message"
+            rule="required"
+            placeholder="Enter the Message..."
+            name="message"
+            label="Message" />
+          <div class="flex justify-end">
+            <button
+              :disabled="loading"
+              type="submit"
+              class="px-10 py-4 disabled:cursor-wait disabled:hover:bg-primary-2 border-none bg-primary-2 hover:bg-primary cursor-pointer text-primary-5 rounded-md font-medium">
+              Send
+            </button>
+          </div>
+        </div>
+      </form>
     </section>
   </main>
 </template>
