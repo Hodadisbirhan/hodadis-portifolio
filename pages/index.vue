@@ -4,19 +4,19 @@ const services = ref([
     icon: "/favicon.ico",
     name: "Web Development",
     description:
-      " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate autem optio assumenda distinctio a. Nam quis saepe sint delectus quas,earum ab. Sed debitis unde doloribus rerum aspernatur voluptates nostrum",
+      " As a seasoned web developer, I specialize in crafting bespoke digital solutions tailored to meet the unique needs of businesses and individuals. My goal is to provide high-quality, user-friendly websites that not only look stunning but also function seamlessly across all devices and platforms. With a keen eye for design and a passion for coding, I take pride in delivering exceptional results that exceed client expectations.",
   },
   {
     icon: "/favicon.ico",
     name: "Mobile Development",
     description:
-      " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate autem optio assumenda distinctio a. Nam quis saepe sint delectus quas,earum ab. Sed debitis unde doloribus rerum aspernatur voluptates nostrum",
+      "As a skilled mobile developer, I specialize in creating innovative and high-performance mobile applications that elevate user experiences and drive business growth. With a deep understanding of mobile technologies and a passion for crafting elegant solutions, I collaborate closely with clients to bring their app ideas to life. From concept to deployment, I'm dedicated to delivering top-notch mobile experiences that captivate audiences and deliver tangible results.",
   },
   {
     icon: "/favicon.ico",
     name: "SEO Optimazation",
     description:
-      " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate autem optio assumenda distinctio a. Nam quis saepe sint delectus quas,earum ab. Sed debitis unde doloribus rerum aspernatur voluptates nostrum",
+      " As an experienced SEO developer, I specialize in helping businesses and individuals maximize their online presence and drive organic traffic to their websites. With a data-driven approach and a deep understanding of search engine algorithms, I offer tailored SEO solutions that enhance website visibility, increase rankings, and ultimately, boost conversions. Whether you're looking to improve your website's search engine rankings, optimize your content for targeted keywords, or enhance your overall online visibility, I'm here to help you achieve your goals.",
   },
 ]);
 
@@ -25,19 +25,19 @@ const projects = ref([
     image: "/food.png",
     title: "Food Recipe",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate autem optio assumenda distinctio a. Nam quis saepe sint delectus quas,earum ab. Sed debitis unde doloribus rerum aspernatur voluptates nostrum",
+      " is a website application that used to show how to prepare food in the best way,which is developed using Vue.js,Vite,Tailwind CSS,PostgreSQL,Hasura,GraphQL, Express.js and Apollo Client",
     size: 4000,
     date: "03/06/2022",
-    link: "#",
+    link: "https://food-recipe-app-hodadis.netlify.app/",
   },
   {
     image: "/hibirlink.jpeg",
     title: "Hibirlink",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate autem optio assumenda distinctio a. Nam quis saepe sint delectus quas,earum ab. Sed debitis unde doloribus rerum aspernatur voluptates nostrum",
+      "is an online ecosystem thatseamlessly combines online product marketplace, trusted delivery services,streamlined service provider connections,which is developed using Vue.js,Vite,Nuxt.js,Tailwind CSS,PostgreSQL,Hasura,GraphQL, Express.js and Apollo Client",
     size: 4000,
     date: "03/06/2022",
-    link: "#",
+    link: "https://www.hibirlink.com/",
   },
 ]);
 
@@ -59,6 +59,41 @@ const skills = ref([
     level: 100,
   },
 ]);
+
+const educations = ref([
+  {
+    name: "Primary school",
+    school: "Woheny",
+    date: "Sep 1998 - Jun 2006",
+    description:
+      "At Woheny, we believe that every child deserves a nurturing and stimulating learning environment where they can reach their full potential. With a focus on holistic education, personalized attention, and fostering a love for learning, we provide a comprehensive educational experience for students from Grade 1 to Grade 8.",
+  },
+  {
+    name: "High and Preparatory school",
+    school: "Mankusa",
+    date: "Sep 2007 - Jun 2011",
+    description:
+      "At Mankusa High School, we are committed to preparing students for success in college, career, and beyond. With a rigorous academic program, a supportive learning environment, and a focus on personal growth and achievement, we empower students in grades 9 to 12 to discover their passions, pursue their dreams, and become confident, responsible leaders in a global society.",
+  },
+  {
+    name: "University",
+    school: "Bahir Dar",
+    date: "Sep 2009 - Jun 2015",
+    description:
+      "At Mankusa High School, we are committed to preparing students for success in college, career, and beyond. With a rigorous academic program, a supportive learning environment, and a focus on personal growth and achievement, we empower students in grades 9 to 12 to discover their passions, pursue their dreams, and become confident, responsible leaders in a global society.",
+  },
+]);
+
+const experiences = ref([
+  {
+    title: "Intern",
+    company: "Minab IT Solution(Hahu Jobs)",
+    startDate: "June 2022",
+    endDate: "September 2022",
+    description:
+      "During my internship period at Minab IT Solutions from June 2022 to September 2022, I was immersed in an enriching environment where I honed my skills in front-end application development using Vue.js and Nuxt.js, particularly focusing on creating server-side rendered (SSR) applications. Additionally, I gained proficiency in Vite and Tailwind CSS for efficient and responsive UI development. On the backend side, I delved into backend development using a combination of Golang and Express.js. I worked extensively with databases, including Hasura, PostgreSQL, and SQL, learning how to design efficient schema and execute complex queries to optimize data retrieval and manipulation. Moreover, I had the opportunity to delve into API development using GraphQL, gaining hands-on experience in building robust and flexible APIs to facilitate smooth communication between the frontend and backend components of applications. Throughout the internship, I also familiarized myself with various version control and collaborative tools such as Git, GitLab, and GitHub. These tools played a pivotal role in facilitating seamless collaboration among team members and ensuring efficient management of project repositories. Overall, my internship experience at Minab IT Solution provided me with a comprehensive understanding of modern web development technologies and methodologies, equipping me with the necessary skills to contribute effectively to softwaredevelopment projects in a professional environment.",
+  },
+]);
 </script>
 
 <template>
@@ -75,11 +110,9 @@ const skills = ref([
           class="lg:text-6xl md:text-4xl text-3xl -mt-0 font-extrabold text-primary">
           Hodadis Birhan
         </h1>
-        <p class="text-primary-dark -mt-1 mb-7">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate
-          autem optio assumenda distinctio a. Nam quis saepe sint delectus quas,
-          earum ab. Sed debitis unde doloribus rerum aspernatur voluptates
-          nostrum.
+        <p class="text-primary-dark -mt-1 mb-7 text-lg font-medium">
+          Bachelor's Degree in Software Engineering At Bahir Dar University Sep
+          2019 – July 2023 CGPA: 3.95
         </p>
         <div class="flex gap-3 md:items-start items-center flex-wrap">
           <a
@@ -208,18 +241,16 @@ const skills = ref([
             Full Stack Developer!
           </h2>
           <p class="text-lg text-primary-dark/80 font-medium">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias
-            deserunt ipsum natus tempora fugit. Provident inventore blanditiis
-            temporibus fugiat totam, asperiores, est tenetur eveniet veniam rem
-            officia id, voluptatibus amet? Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Distinctio adipisci, eaque fugiat
-            suscipit consequatur sapiente impedit repudiandae voluptas
-            architecto explicabo tempore, minima, qui perferendis expedita
-            dolorem sit molestiae quo quos. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Voluptatem totam alias sit
-            voluptatibus reprehenderit laborum eligendi tempore vel, molestias
-            aliquam explicabo itaque nam debitis nesciunt quidem ex, maiores
-            nostrum ipsam.
+            Hello, I'm a passionate Fullstack Developer with over 2 years of
+            hands-on experience in building robust and scalable web
+            applications. With a blend of technical expertise, creative
+            problem-solving skills, and a keen eye for design, I specialize in
+            crafting innovative solutions that deliver exceptional user
+            experiences. My journey into the world of software development began
+            in 2020 year when I discovered my passion for coding and technology.
+            Since then, I've been on a relentless quest to expand my knowledge,
+            refine my skills, and stay at the forefront of industry trends and
+            best practices.
           </p>
         </div>
       </div>
@@ -261,9 +292,9 @@ const skills = ref([
         Service
       </h1>
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 justify-center items-center gap-6">
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 w-auto gap-6">
         <div
-          class="px-3 md:w-[25rem] border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4"
+          class="px-3 md:w-[25rem] border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
           v-for="service in services"
           :key="service.name"
           data-aos="fade-up"
@@ -291,9 +322,9 @@ const skills = ref([
 
     <section
       id="education"
-      class="flex md:flex-row justify-center items-center flex-col w-full md:gap-24 gap-40 min-h-[30rem] pt-[8rem]">
-      <div class="flex md:gap-[2rem]">
-        <div class="w-1 hidden md:block rounded-3xl bg-primary/80"></div>
+      class="flex md:flex-row justify-center items-start flex-col w-full md:gap-24 gap-40 min-h-[30rem] pt-[8rem]">
+      <div class="flex md:gap-[2rem] flex-1">
+        <div class="w-2 hidden md:block rounded-3xl bg-primary/20"></div>
 
         <div class="flex relative flex-col gap-4">
           <h2
@@ -305,36 +336,33 @@ const skills = ref([
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-out"
-            v-for="i in 4"
-            :key="i">
+            v-for="education in educations"
+            :key="education.name">
             <div class="flex items-center gap-2">
               <Icon
                 name="material-symbols:calendar-month"
                 class="text-primary group-hover:text-primary-5"></Icon>
               <span
                 class="text-sm font-medium text-primary-lite group-hover:text-primary-5"
-                >2019-2023</span
+                >{{ education.date }}</span
               >
             </div>
 
             <h3
               class="text-xl p-0 m-0 font-bold text-primary/50 group-hover:text-primary-5">
-              Bachlor Degree-BahirDar University
+              {{ education.name }} - {{ education.school }}
             </h3>
             <p
               class="text-primary-lite font-medium text-lg group-hover:text-primary-5">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere,
-              odio. Itaque, cupiditate, incidunt vel magni eligendi fugiat,
-              repellendus quis quos saepe ut quisquam sapiente. Facere magnam
-              culpa ab non temporibus.
+              {{ education.description }}
             </p>
             <span
               class="absolute -top-1 md:block hidden -left-[2.7rem] w-[1rem] h-[1rem] rounded-[100%] border-primary-2 border border-solid bg-primary-4 group-hover:bg-primary-2"></span>
           </div>
         </div>
       </div>
-      <div class="flex gap-[2rem]">
-        <div class="w-1 rounded-3xl md:block hidden bg-primary"></div>
+      <div class="flex gap-[2rem] flex-1">
+        <div class="w-2 rounded-3xl md:block hidden bg-primary/20"></div>
 
         <div class="relative flex flex-col gap-4">
           <h2
@@ -346,28 +374,25 @@ const skills = ref([
             data-aos="fade-left"
             data-aos-offset="300"
             data-aos-easing="ease-in-out"
-            v-for="i in 4"
-            :key="i">
+            v-for="experience in experiences"
+            :key="experience.title">
             <div class="flex items-center gap-2">
               <Icon
                 name="material-symbols:calendar-month"
                 class="text-primary group-hover:text-primary-5"></Icon>
               <span
                 class="text-sm font-medium text-primary-lite group-hover:text-primary-5"
-                >2019-2023</span
+                >{{ experience.startDate }}-{{ experience.endDate }}</span
               >
             </div>
 
             <h3
               class="text-xl p-0 m-0 font-bold text-primary/50 group-hover:text-primary-5">
-              Bachlor Degree-BahirDar University
+              {{ experience.title }}-{{ experience.company }}
             </h3>
             <p
               class="text-primary-lite font-medium text-lg group-hover:text-primary-5">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere,
-              odio. Itaque, cupiditate, incidunt vel magni eligendi fugiat,
-              repellendus quis quos saepe ut quisquam sapiente. Facere magnam
-              culpa ab non temporibus.
+              {{ experience.description }}
             </p>
             <span
               class="absolute -top-1 md:block hidden -left-[2.7rem] w-[1rem] h-[1rem] rounded-[100%] border-primary-2 border border-solid bg-primary-4 group-hover:bg-primary-2"></span>
@@ -383,7 +408,7 @@ const skills = ref([
         Project
       </h1>
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 items-center justify-center gap-6">
+        class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 justify-center gap-6">
         <div
           class="px-3 md:w-[30rem] w-[90%] border border-solid border-primary-5 group hover:bg-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4"
           v-for="project in projects"
@@ -426,7 +451,8 @@ const skills = ref([
             </div>
             <a
               :href="project.link"
-              class="flex items-center no-underline justify-center gap-1">
+              class="flex items-center no-underline justify-center gap-1"
+              target="_blank">
               <Icon
                 name="mdi:link-variant"
                 class="group-hover:text-primary-5 text-primary"></Icon>
