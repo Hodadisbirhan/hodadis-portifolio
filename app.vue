@@ -5,11 +5,12 @@
 </template>
 <script setup>
 useSeoMeta({
-  title: "Hodadis",
-  ogTitle: "Hodadis",
+  title: "Hodadis Birhan Official Portfolio",
+  ogTitle: "Hodadis Birhan Official Portfolio",
   description:
-    "Personal Portifolio,Hodadis Birhan,Amazing portfolio,Best portfolio,Best Personal Website,Hodadis Birhan.",
-  ogDescription: "This is my amazing site, let me tell you all about it.",
+    "Personal Portifolio, Hodadis Birhan, Amazing portfolio,Best portfolio,Best Personal Website, Hodadis Birhan.",
+  ogDescription:
+    "Personal Portifolio, Hodadis Birhan, Amazing portfolio,Best portfolio,Best Personal Website, Hodadis Birhan.",
   ogImage: "/hod.png",
 });
 </script>
