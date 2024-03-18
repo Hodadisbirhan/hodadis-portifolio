@@ -9,7 +9,7 @@
     <div class="flex relative">
       <textarea
         :name="name"
-        class="placeholder:text-sm text-base font-normal text-gray-600 outline-none border border-gray-300 border-solid w-full min-h-[7rem] bg-transparent hover:border-blue-500 focus:border-blue-600 rounded-md placeholder:text-gray-600/55"
+        class="placeholder:text-sm text-base font-normal text-gray-600 outline-none border border-gray-300 border-solid w-full min-h-[7rem] bg-primary-5 px-2 hover:border-blue-500 focus:border-blue-600 rounded-md placeholder:text-gray-600/55"
         :id="id"
         v-model="dataValue"
         :placeholder="placeholder"></textarea>
