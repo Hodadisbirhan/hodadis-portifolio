@@ -130,6 +130,13 @@ watch(show, (newValue) => {
     }, 8000);
   }
 });
+
+const toK = (value) => {
+  if (value >= 1000) {
+    return (value / 1000).toFixed(2) + "k";
+  }
+  return value;
+};
 </script>
 
 <template>
@@ -146,7 +153,7 @@ watch(show, (newValue) => {
       {{ showMessage }}
     </div>
     <section
-      class="w-full gap-10 min-h-[30rem] pt-[12rem] md:justify-between md:items-start items-center flex md:flex-row flex-col-reverse relative"
+      class="w-full gap-10 min-h-[40rem] pt-[12rem] md:justify-between md:items-start items-center flex md:flex-row flex-col-reverse relative"
       id="home">
       <div
         class="flex flex-1 flex-col md:items-start items-center"
@@ -373,7 +380,7 @@ watch(show, (newValue) => {
       <div class="flex md:gap-[2rem] flex-1">
         <div class="w-2 hidden md:block rounded-3xl bg-primary/20"></div>
 
-        <div class="flex relative flex-col gap-4">
+        <div class="flex relative flex-col gap-8">
           <h2
             class="lg:text-5xl md:text-4xl text-3xl font-bold text-primary absolute -top-28 left-0">
             Education
@@ -411,7 +418,7 @@ watch(show, (newValue) => {
       <div class="flex gap-[2rem] flex-1">
         <div class="w-2 rounded-3xl md:block hidden bg-primary/20"></div>
 
-        <div class="relative flex flex-col gap-4">
+        <div class="relative flex flex-col gap-8">
           <h2
             class="lg:text-5xl md:text-4xl text-3xl font-bold text-primary absolute -top-28 left-0">
             Experiance
@@ -460,7 +467,9 @@ watch(show, (newValue) => {
         <div
           class="px-3 md:w-[30rem] w-[90%] border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
           v-for="project in projects"
-          :key="project.title">
+          :key="project.title"
+          data-aos="fade-up"
+          data-aos-duration="3000">
           <div
             class="w-full h-[16rem] border-primary-2 group-hover:border-primary-5 flex items-center justify-center">
             <img
@@ -492,7 +501,7 @@ watch(show, (newValue) => {
                 name="mdi:code-tags"
                 class="group-hover:text-primary-5 text-primary"></Icon>
               <span class="text-xs group-hover:text-primary-5 font-medium">{{
-                project.size
+                toK(project.size)
               }}</span>
             </div>
             <a
@@ -545,7 +554,10 @@ watch(show, (newValue) => {
       </div>
       <form
         class="flex-1 px-3 py-14 bg-primary-4 border border-primary-5 border-solid rounded-md"
-        @submit.prevent="submit">
+        @submit.prevent="submit"
+        data-aos="fade-left"
+        data-aos-offset="400"
+        data-aos-easing="ease-in-out">
         <h3 class="text-xl text-center font-semibold text-primary">
           Contact Me
         </h3>
