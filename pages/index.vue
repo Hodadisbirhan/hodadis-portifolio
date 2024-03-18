@@ -367,7 +367,7 @@ const toK = (value) => {
           </h3>
 
           <p
-            class="font-medium text-primary-dark/50 tracking-wide group-hover:text-primary-5 text-xs md:text-sm">
+            class="font-medium text-primary-dark/50 tracking-wide group-hover:text-primary-5 text-xs md:text-sm xl:text-base">
             {{ service.description }}
           </p>
         </div>
@@ -407,7 +407,7 @@ const toK = (value) => {
               {{ education.name }} - {{ education.school }}
             </h3>
             <p
-              class="text-primary-dark/50 font-medium md:text-sm tracking-wide text-xs group-hover:text-primary-5">
+              class="text-primary-dark/50 font-medium md:text-sm xl:text-base tracking-wide text-xs group-hover:text-primary-5">
               {{ education.description }}
             </p>
             <span
@@ -445,7 +445,7 @@ const toK = (value) => {
               {{ experience.title }}-{{ experience.company }}
             </h3>
             <p
-              class="text-primary-dark/50 font-medium tracking-wide md:text-sm text-xs group-hover:text-primary-5">
+              class="text-primary-dark/50 font-medium tracking-wide md:text-sm text-xs xl:text-base group-hover:text-primary-5">
               {{ experience.description }}
             </p>
             <span
@@ -484,7 +484,7 @@ const toK = (value) => {
           </h2>
 
           <p
-            class="font-medium text-primary-dark/50 tracking-wide group-hover:text-primary-5 text-xs md:text-sm text-pretty first-letter:uppercase">
+            class="font-medium text-primary-dark/50 tracking-wide group-hover:text-primary-5 text-xs md:text-sm xl:text-base text-pretty first-letter:uppercase">
             {{ project.description }}
           </p>
           <div class="flex flex-1 items-end justify-between text-primary-2">
@@ -532,14 +532,16 @@ const toK = (value) => {
           <Icon
             name="material-symbols:call-sharp"
             class="text-lg text-primary"></Icon>
-          <span class="text-primary-dark/80 text-sm">+251995183367</span>
+          <span class="text-primary-dark/80 text-sm lg:text-base"
+            >+251995183367</span
+          >
         </div>
         <div class="flex flex-row gap-4">
           <Icon
             name="material-symbols:mail-rounded"
             class="text-lg text-primary">
           </Icon>
-          <span class="text-primary-dark/80 text-sm"
+          <span class="text-primary-dark/80 text-sm lg:text-base"
             >hodadisbirhan80@gmail.com</span
           >
         </div>
@@ -547,7 +549,7 @@ const toK = (value) => {
           <Icon
             name="material-symbols:location-on-rounded"
             class="text-lg text-primary"></Icon>
-          <span class="text-primary-dark/80 text-sm"
+          <span class="text-primary-dark/80 text-sm lg:text-base"
             >Addis Ababa, Ethiopia</span
           >
         </div>
