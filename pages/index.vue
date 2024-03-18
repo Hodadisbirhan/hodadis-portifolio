@@ -99,7 +99,7 @@ const experiences = ref([
       "During my internship period at Minab IT Solutions from June 2022 to September 2022, I was immersed in an enriching environment where I honed my skills in front-end application development using Vue.js and Nuxt.js, particularly focusing on creating server-side rendered (SSR) applications. Additionally, I gained proficiency in Vite and Tailwind CSS for efficient and responsive UI development. On the backend side, I delved into backend development using a combination of Golang and Express.js. I worked extensively with databases, including Hasura, PostgreSQL, and SQL, learning how to design efficient schema and execute complex queries to optimize data retrieval and manipulation. Moreover, I had the opportunity to delve into API development using GraphQL, gaining hands-on experience in building robust and flexible APIs to facilitate smooth communication between the frontend and backend components of applications. ",
   },
 ]);
-const { handleSubmit } = useForm();
+const { handleSubmit, resetForm } = useForm();
 
 const submit = handleSubmit(async (value) => {
   console.log(value);
@@ -114,6 +114,7 @@ const submit = handleSubmit(async (value) => {
       error.value = false;
       showMessage.value = "Thank You " + name + " For Your Feedback!";
       loading.value = false;
+      resetForm();
     })
     .catch((erro) => {
       show.value = true;
@@ -239,32 +240,6 @@ const toK = (value) => {
             alt="Photo"
             class="object-contain rounded-[100%] md:w-[20rem] md:h-[20rem] h-[10rem] w-[10rem] object-center" />
         </div>
-        <!-- <div
-          class="absolute left-0 z-0 rounded-[100%] top-3 w-[30rem] h-[30rem] border border-solid border-primary-2 opacity-50">
-          <div
-            class="flex items-center justfy-center flex-col gap-3 rotate-0 absolute">
-            <Icon
-              name="mdi:link-variant"
-              class="group-hover:text-primary-5 text-primary"></Icon>
-
-            <span>Web Development</span>
-          </div>
-
-          <div class="flex items-center justfy-center flex-col gap-3 rotate-90">
-            <Icon
-              name="mdi:link-variant"
-              class="group-hover:text-primary-5 text-primary"></Icon>
-
-            <span>Frontend Development</span>
-          </div>
-          <div class="flex items-center justfy-center flex-col gap-3 rotate-45">
-            <Icon
-              name="mdi:link-variant"
-              class="group-hover:text-primary-5 text-primary"></Icon>
-
-            <span>Backend Development</span>
-          </div>
-        </div> -->
       </div>
     </section>
 
@@ -613,45 +588,5 @@ html {
 body {
   margin: 0;
   padding: 0;
-}
-
-.container {
-  position: absolute;
-  top: 0%;
-  left: 0;
-  right: -4rem;
-  background: #003399;
-  height: 50vh;
-}
-
-.wave {
-  position: absolute;
-  height: 250px;
-  width: 100%;
-  background: #003399;
-  bottom: 0;
-}
-
-.wave::before,
-.wave::after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 50% 100%;
-}
-
-.wave::before {
-  width: 55%;
-  height: 100%;
-  background-color: #2c3e50;
-  right: -1.5%;
-  top: 40%;
-}
-.wave::after {
-  width: 55%;
-  height: 109%;
-  background-color: #fff;
-  left: -1.5%;
-  top: 60%;
 }
 </style>
