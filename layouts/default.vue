@@ -62,7 +62,7 @@
       <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <div class="flex flex-col items-center justify-center gap-4 mb-4">
           <h2 class="text-3xl font-bold text-primary/50 m-0">Hodadis</h2>
-          <span class="text-primary-lite font-semibold"
+          <span class="text-primary-dark/50 font-semibold"
             >tel: +251995183367</span
           >
         </div>
@@ -74,7 +74,7 @@
             <a
               aria-current="page"
               href="/#about"
-              class="router-link-active router-link-exact-active font-medium text-gray-500 text-lg hover:text-gray-900 dark:hover:text-darkmode-white"
+              class="font-medium text-gray-500 text-lg hover:text-primary-2 dark:hover:text-darkmode-white"
               >About</a
             >
           </div>
@@ -82,7 +82,7 @@
             <a
               aria-current="page"
               href="/#service"
-              class="router-link-active router-link-exact-active font-medium text-gray-500 text-lg hover:text-gray-900 dark:hover:text-darkmode-white"
+              class="font-medium text-gray-500 text-lg hover:text-primary-2 dark:hover:text-darkmode-white"
               >Service</a
             >
           </div>
@@ -90,42 +90,42 @@
             <a
               aria-current="page"
               href="/#project"
-              class="router-link-active router-link-exact-active font-medium text-gray-500 text-lg hover:text-gray-900 dark:hover:text-darkmode-white"
+              class="router-link-active router-link-exact-active font-medium text-gray-500 text-lg hover:text-primary-2 dark:hover:text-darkmode-white"
               >Projects</a
             >
           </div>
           <div class="px-5 py-2">
             <a
               aria-current="page"
-              href="/#partners"
-              class="router-link-active router-link-exact-active font-medium text-gray-500 text-lg hover:text-gray-900 dark:hover:text-darkmode-white"
-              >Partners</a
+              href="/#skill"
+              class="font-medium text-gray-500 text-lg hover:text-primary-2 dark:hover:text-darkmode-white"
+              >Skill</a
             >
           </div>
           <div class="px-5 py-2">
             <a
               aria-current="page"
-              href="/#"
-              class="router-link-active router-link-exact-active font-medium text-gray-500 text-lg hover:text-gray-900 dark:hover:text-darkmode-white"
-              >Privacy policy</a
+              href="/#contact"
+              class="font-medium text-gray-500 text-lg hover:text-primary-2 dark:hover:text-darkmode-white"
+              >Contact</a
             >
           </div>
           <!--]-->
         </nav>
         <div class="mt-8 flex justify-center space-x-6">
           <!--[--><a
-            href="#"
+            href="https://github.com/Hodadisbirhan"
             rel="noopener noreferrer"
             target="_blank"
             class="text-gray-400 hover:text-gray-500 dark:hover:text-darkmode-white"
-            ><span class="sr-only">Facebook</span
+            ><span class="sr-only">Github</span
             ><Icon
-              name="ic:round-facebook"
+              name="teenyicons:github-solid"
               alt="S.link"
               class="h-6 w-6 text-primary/80"
               aria-hidden="true" /></a
           ><a
-            href="#"
+            href="https://www.linkedin.com/in/hodadis-birhan-2a5719231"
             rel="noopener noreferrer"
             target="_blank"
             class="text-gray-400 hover:text-gray-500 dark:hover:text-darkmode-white"
@@ -136,7 +136,7 @@
               class="h-6 w-6 text-primary/80"
               aria-hidden="true" /></a
           ><a
-            href="#"
+            href="https://www.instagram.com/hodadisbirhan4"
             rel="noopener noreferrer"
             target="_blank"
             class="text-gray-400 hover:text-gray-500 dark:hover:text-darkmode-white"
@@ -149,7 +149,8 @@
           ><!--]-->
         </div>
         <p class="mt-8 text-center text-lg text-gray-400">
-          © 2024 Hodadis Birhan. All rights reserved.
+          Copyright © {{ new Date().getFullYear() }} Hodadis Birhan. All rights
+          reserved.
         </p>
       </div>
     </footer>
