@@ -346,7 +346,7 @@ const toK = (value) => {
         Service
       </h2>
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 w-auto gap-6">
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:flex 2xl:flex-row 2xl:flex-wrap w-auto gap-6">
         <div
           class="px-3 md:w-[25rem] border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
           v-for="service in services"
@@ -463,7 +463,7 @@ const toK = (value) => {
       </h2>
 
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 place-content-center justify-center">
+        class="grid grid-cols-1 lg:grid-cols-2 2xl:flex 2xl:flex-row 2xl:flex-wrap gap-6 place-content-center justify-center">
         <div
           class="px-3 md:w-[30rem] w-[90%] border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
           v-for="project in projects"
