@@ -279,13 +279,13 @@ watch(show, (newValue) => {
         <div
           class="flex flex-col items-center md:items-start md:flex-1"
           data-aos="fade-left">
-          <h1 class="font-bold md:text-4xl text-3xl lg:text-5xl text-primary">
+          <h2 class="font-bold md:text-4xl text-3xl lg:text-5xl text-primary">
             About Me
-          </h1>
-          <h2
+          </h2>
+          <h3
             class="lg:text-3xl md:text-2xl text-xl font-bold text-primary-lite -mt-1">
             Full Stack Developer!
-          </h2>
+          </h3>
           <p class="text-lg text-primary-dark/80 font-medium">
             Hello, I'm a passionate Fullstack Developer with over 2 years of
             hands-on experience in building robust and scalable web
@@ -305,10 +305,10 @@ watch(show, (newValue) => {
     <section
       id="skill"
       class="w-full min-h-[30rem] justify-center">
-      <h1
+      <h2
         class="text-primary text-center lg:text-5xl md:text-4xl text-3xl font-bold">
         Skills
-      </h1>
+      </h2>
       <div class="grid md:grid-cols-2 grid-cols-1 gap-16">
         <div
           class="flex flex-col gap-2"
@@ -335,9 +335,9 @@ watch(show, (newValue) => {
     <section
       id="service"
       class="flex flex-col items-center min-h-[40rem] pt-[8rem]">
-      <h1 class="text-primary lg:text-5xl md:text-4xl text-3xl font-bold">
+      <h2 class="text-primary lg:text-5xl md:text-4xl text-3xl font-bold">
         Service
-      </h1>
+      </h2>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 w-auto gap-6">
         <div
@@ -354,10 +354,10 @@ watch(show, (newValue) => {
               :alt="service.name" />
           </div>
 
-          <h2
+          <h3
             class="md:text-2xl text-xl group-hover:text-primary-5 font-bold text-primary">
             {{ service.name }}
-          </h2>
+          </h3>
 
           <p
             class="font-medium text-primary-dark/50 tracking-wide group-hover:text-primary-5 text-xs md:text-sm">
@@ -451,9 +451,9 @@ watch(show, (newValue) => {
     <section
       id="project"
       class="flex flex-col items-center pt-[8rem] min-h-[40rem] justify-center">
-      <h1 class="text-primary lg:text-5xl md:text-4xl text-3xl font-bold">
+      <h2 class="text-primary lg:text-5xl md:text-4xl text-3xl font-bold">
         Project
-      </h1>
+      </h2>
 
       <div
         class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 place-content-center justify-center">
