@@ -194,7 +194,7 @@ const getYearMonth = (value) => {
         <br />
         <h1
           class="lg:text-6xl md:text-4xl text-3xl -m-0 font-bold text-primary">
-          {{ myInfo.first_name }} {{ myInfo.last_name }}
+          {{ myInfo?.first_name }} {{ myInfo?.last_name }}
         </h1>
         <span class="text-2xl pt-4 font-semibold text-primary-dark/80">{{
           myInfo?.status
