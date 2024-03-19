@@ -311,7 +311,7 @@ const getYearMonth = (value) => {
 
     <section
       id="skill"
-      class="w-full min-h-[30rem] justify-center">
+      class="w-full min-h-[30rem] justify-center pt-[3.5rem]">
       <h2
         class="text-primary text-center lg:text-5xl md:text-4xl text-3xl font-bold">
         Skills
@@ -341,33 +341,32 @@ const getYearMonth = (value) => {
 
     <section
       id="service"
-      class="flex flex-col items-center min-h-[40rem] pt-[8rem]">
+      class="flex flex-col items-center min-h-[40rem] pt-[6rem] mt-5">
       <h2 class="text-primary lg:text-5xl md:text-4xl text-3xl font-bold">
         Service
       </h2>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:flex 2xl:flex-row 2xl:flex-wrap w-auto gap-6">
         <div
-          class="px-3 md:w-[25rem] border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
+          class="px-3 md:w-[25rem] border border-solid border-primary-5 group hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
           v-for="service in myInfo?.services"
           :key="service.id"
           data-aos="fade-up"
           data-aos-duration="3000">
           <div
-            class="w-[4rem] h-[4rem] rounded-[100%] border border-solid bg-primary-5 border-primary-2 group-hover:border-primary-5 flex items-center justify-center overflow-hidden">
+            class="w-[4rem] h-[4rem] rounded-[100%] border border-solid bg-primary-5 border-primary-2 flex items-center justify-center overflow-hidden">
             <img
               class="object-center object-cover w-[4rem] h-[4rem]"
               :src="service.image"
               :alt="service.title" />
           </div>
 
-          <h3
-            class="md:text-2xl text-xl group-hover:text-primary-5 font-bold text-primary">
+          <h3 class="md:text-2xl text-xl font-bold text-primary">
             {{ service.title }}
           </h3>
 
           <p
-            class="font-medium text-primary-dark/50 tracking-wide group-hover:text-primary-5 text-xs md:text-sm xl:text-base">
+            class="font-medium text-primary-dark/50 tracking-wide text-xs md:text-sm xl:text-base">
             {{ service.description }}
           </p>
         </div>
@@ -376,7 +375,7 @@ const getYearMonth = (value) => {
 
     <section
       id="education"
-      class="flex md:flex-row justify-center items-start flex-col w-full md:gap-24 gap-40 min-h-[30rem] pt-[8rem]">
+      class="flex md:flex-row justify-center items-start flex-col w-full md:gap-24 gap-40 min-h-[30rem] pt-[12rem]">
       <div class="flex md:gap-[2rem] flex-1">
         <div class="w-2 hidden md:block rounded-3xl bg-primary/20"></div>
 
@@ -386,7 +385,7 @@ const getYearMonth = (value) => {
             Education
           </h2>
           <div
-            class="relative group hover:bg-primary-2 flex flex-col px-3 py-4 border border-solid border-primary-5 hover:border-primary-2 bg-primary-4 transition-all duration-300 rounded-md"
+            class="relative group flex flex-col px-3 py-4 border border-solid border-primary-5 hover:border-primary-2 bg-primary-4 transition-all duration-300 rounded-md"
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-out"
@@ -395,20 +394,18 @@ const getYearMonth = (value) => {
             <div class="flex items-center gap-2">
               <Icon
                 name="material-symbols:calendar-month"
-                class="text-primary group-hover:text-primary-5"></Icon>
-              <span
-                class="text-xs font-medium text-primary-dark/50 group-hover:text-primary-5"
+                class="text-primary"></Icon>
+              <span class="text-xs font-medium text-primary-dark/50"
                 >{{ getYearMonth(education.start_date) }}-
                 {{ getYearMonth(education.end_date) }}</span
               >
             </div>
 
-            <h3
-              class="text-xl p-0 m-0 font-semibold text-primary/50 group-hover:text-primary-5">
+            <h3 class="text-xl p-0 m-0 font-semibold text-primary/50">
               {{ education.name }} - {{ education.education_level }}
             </h3>
             <p
-              class="text-primary-dark/50 font-medium md:text-sm xl:text-base tracking-wide text-xs group-hover:text-primary-5">
+              class="text-primary-dark/50 font-medium md:text-sm xl:text-base tracking-wide text-xs">
               {{ education.description }}
             </p>
             <span
@@ -425,7 +422,7 @@ const getYearMonth = (value) => {
             Experiance
           </h2>
           <div
-            class="relative group hover:bg-primary-2 flex flex-col px-3 py-4 border border-solid border-primary-5 hover:border-primary-2 rounded-md transition-all duration-300 bg-primary-4"
+            class="relative group flex flex-col px-3 py-4 border border-solid border-primary-5 hover:border-primary-2 rounded-md transition-all duration-300 bg-primary-4"
             data-aos="fade-left"
             data-aos-offset="300"
             data-aos-easing="ease-in-out"
@@ -434,21 +431,19 @@ const getYearMonth = (value) => {
             <div class="flex items-center gap-2">
               <Icon
                 name="material-symbols:calendar-month"
-                class="text-primary group-hover:text-primary-5 text-primary-dark/60"></Icon>
-              <span
-                class="text-xs font-medium text-primary-dark/50 group-hover:text-primary-5"
+                class="text-primary"></Icon>
+              <span class="text-xs font-medium text-primary-dark/50"
                 >{{ getYearMonth(experience.start_date) }}-{{
                   getYearMonth(experience.end_date)
                 }}</span
               >
             </div>
 
-            <h3
-              class="text-xl p-0 m-0 font-semibold text-primary/50 group-hover:text-primary-5">
+            <h3 class="text-xl p-0 m-0 font-semibold text-primary/50">
               {{ experience.position }}-{{ experience.name }}
             </h3>
             <p
-              class="text-primary-dark/50 font-medium tracking-wide md:text-sm text-xs xl:text-base group-hover:text-primary-5">
+              class="text-primary-dark/50 font-medium tracking-wide md:text-sm text-xs xl:text-base">
               {{ experience.description }}
             </p>
             <span
@@ -468,56 +463,50 @@ const getYearMonth = (value) => {
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10 place-content-center justify-center">
         <div
-          class="px-3 border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
+          class="px-3 border border-solid border-primary-5 group hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
           v-for="project in myInfo?.projects"
           :key="project.title"
           data-aos="fade-up"
           data-aos-duration="3000">
           <div
-            class="w-full h-[16rem] border-primary-2 group-hover:border-primary-5 flex items-center justify-center">
+            class="w-full h-[16rem] border-primary-2 flex items-center justify-center">
             <img
               class="object-center rounded-md object-contain w-full h-full"
               :src="project.image"
               :alt="project.id" />
           </div>
 
-          <h2
-            class="md:text-2xl text-xl group-hover:text-primary-5 font-bold text-primary">
+          <h2 class="md:text-2xl text-xl font-bold text-primary">
             {{ project.title }}
           </h2>
 
           <p
-            class="font-medium text-primary-dark/50 tracking-wide group-hover:text-primary-5 text-xs md:text-sm xl:text-base text-pretty first-letter:uppercase">
+            class="font-medium text-primary-dark/50 tracking-wide text-xs md:text-sm xl:text-base text-pretty first-letter:uppercase">
             {{ project.description }}
           </p>
           <div class="flex flex-1 items-end justify-between text-primary-2">
             <div class="flex items-center justify-center gap-1">
               <Icon
                 name="material-symbols:calendar-month"
-                class="group-hover:text-primary-5 text-primary text-sm"></Icon>
-              <span class="text-xs group-hover:text-primary-5 font-medium">{{
+                class="text-primary text-sm"></Icon>
+              <span class="text-xs font-medium">{{
                 getYearMonth(project.date)
               }}</span>
             </div>
             <div class="flex items-center justify-center gap-1">
               <Icon
                 name="mdi:code-tags"
-                class="group-hover:text-primary-5 text-primary"></Icon>
-              <span class="text-xs group-hover:text-primary-5 font-medium">{{
-                toK(project.size)
-              }}</span>
+                class="text-primary"></Icon>
+              <span class="text-xs font-medium">{{ toK(project.size) }}</span>
             </div>
             <a
               :href="project.link"
-              class="flex items-center no-underline justify-center gap-1"
+              class="flex items-center no-underline hover:underline justify-center gap-1"
               target="_blank">
               <Icon
                 name="mdi:link-variant"
-                class="group-hover:text-primary-5 hover:underline text-primary text-sm"></Icon>
-              <span
-                class="text-xs group-hover:text-primary-5 hover:underline font-medium"
-                >View</span
-              >
+                class="text-primary text-sm"></Icon>
+              <span class="text-xs font-medium">View</span>
             </a>
           </div>
         </div>
