@@ -506,7 +506,7 @@ const getYearMonth = (value) => {
               <Icon
                 name="mdi:link-variant"
                 class="text-primary text-sm"></Icon>
-              <span class="text-xs font-medium">View</span>
+              <span class="text-xs font-medium text-primary-2">View</span>
             </a>
           </div>
         </div>
