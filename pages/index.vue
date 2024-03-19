@@ -270,7 +270,7 @@ const getYearMonth = (value) => {
         <div
           class="md:w-[20rem] w-[10rem] border-2 border-solid border-primary-5 rounded-[100%] md:h-[20rem] h-[10rem] z-30">
           <img
-            src="/hod.png"
+            :src="myInfo?.profile_image"
             alt="Photo"
             class="object-contain rounded-[100%] md:w-[20rem] md:h-[20rem] h-[10rem] w-[10rem] object-center" />
         </div>
