@@ -1,0 +1,51 @@
+query fetchMyInformation($id: uuid!) {
+  user: users_by_pk(id: $id) {
+    first_name
+    last_name
+    email
+    phone
+    address
+
+    skills {
+      id
+      name
+      level
+    }
+
+    educations {
+      id
+      name
+      description
+      education_level
+      start_date
+      end_date
+    }
+
+    experiences {
+      id
+      name
+      position
+      description
+      start_date
+      end_date
+    }
+    services {
+      id
+      image
+      title
+      description
+      satisfied_cleint
+      year
+    }
+
+    projects {
+      id
+      image
+      title
+      description
+      date
+      size
+      link
+    }
+  }
+}

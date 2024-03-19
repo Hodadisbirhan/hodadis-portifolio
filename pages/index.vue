@@ -1,104 +1,94 @@
 <script setup>
 import { useForm } from "vee-validate";
+//import fetchMyInfoGQL from "~/graphql/query/fetchMyInfo.gql";
+import { useUserID } from "~/store/userID";
+
+import { gql } from "graphql-tag";
+
+const store = useUserID();
 const loading = ref(false);
 const error = ref(false);
 const show = ref(false);
 const showMessage = ref("");
-const services = ref([
-  {
-    icon: "/favicon.ico",
-    name: "Web Development",
-    description:
-      " As a seasoned web developer, I specialize in crafting bespoke digital solutions tailored to meet the unique needs of businesses and individuals. My goal is to provide high-quality, user-friendly websites that not only look stunning but also function seamlessly across all devices and platforms. With a keen eye for design and a passion for coding, I take pride in delivering exceptional results that exceed client expectations.",
-  },
-  {
-    icon: "/favicon.ico",
-    name: "Mobile Development",
-    description:
-      "As a skilled mobile developer, I specialize in creating innovative and high-performance mobile applications that elevate user experiences and drive business growth. With a deep understanding of mobile technologies and a passion for crafting elegant solutions, I collaborate closely with clients to bring their app ideas to life. From concept to deployment, I'm dedicated to delivering top-notch mobile experiences that captivate audiences and deliver tangible results.",
-  },
-  {
-    icon: "/favicon.ico",
-    name: "SEO Optimazation",
-    description:
-      " As an experienced SEO developer, I specialize in helping businesses and individuals maximize their online presence and drive organic traffic to their websites. With a data-driven approach and a deep understanding of search engine algorithms, I offer tailored SEO solutions that enhance website visibility, increase rankings, and ultimately, boost conversions. Whether you're looking to improve your website's search engine rankings, optimize your content for targeted keywords, or enhance your overall online visibility, I'm here to help you achieve your goals.",
-  },
-]);
+const variable = ref({
+  id: store.$state.userID,
+});
 
-const projects = ref([
-  {
-    image: "/food.png",
-    title: "Food Recipe",
-    description:
-      " is a website application that used to show how to prepare food in the best way,which is developed using Vue.js,Vite,Tailwind CSS,PostgreSQL,Hasura,GraphQL, Express.js and Apollo Client",
-    size: 4000,
-    date: "03/06/2022",
-    link: "https://food-recipe-app-hodadis.netlify.app/",
-  },
-  {
-    image: "/hibirlink.jpeg",
-    title: "Hibirlink",
-    description:
-      "is an online ecosystem thatseamlessly combines online product marketplace, trusted delivery services,streamlined service provider connections,which is developed using Vue.js,Vite,Nuxt.js,Tailwind CSS,PostgreSQL,Hasura,GraphQL, Express.js and Apollo Client",
-    size: 4000,
-    date: "03/06/2022",
-    link: "https://www.hibirlink.com/",
-  },
-]);
+const {
+  onResult,
+  result,
+  onError,
+  loading: loadingMyInfoFetch,
+} = useQuery(
+  gql`
+    query fetchMyInformation($id: uuid!) {
+      user: users_by_pk(id: $id) {
+        id
+        profile_image
+        first_name
+        last_name
+        email
+        phone
+        address
+        about
+        status
 
-const skills = ref([
-  {
-    name: "Vuejs",
-    level: 70,
-  },
-  {
-    name: "Golang",
-    level: 60,
-  },
-  {
-    name: "Expressjs",
-    level: 40,
-  },
-  {
-    name: "Nuxtjs",
-    level: 100,
-  },
-]);
+        skills {
+          id
+          name
+          level
+        }
 
-const educations = ref([
-  {
-    name: "Primary school",
-    school: "Woheny",
-    date: "Sep 1998 - Jun 2006",
-    description:
-      "At Woheny, we believe that every child deserves a nurturing and stimulating learning environment where they can reach their full potential. With a focus on holistic education, personalized attention, and fostering a love for learning, we provide a comprehensive educational experience for students from Grade 1 to Grade 8.",
-  },
-  {
-    name: "High and Preparatory school",
-    school: "Mankusa",
-    date: "Sep 2007 - Jun 2011",
-    description:
-      "At Mankusa High School, we are committed to preparing students for success in college, career, and beyond. With a rigorous academic program, a supportive learning environment, and a focus on personal growth and achievement, we empower students in grades 9 to 12 to discover their passions, pursue their dreams, and become confident, responsible leaders in a global society.",
-  },
-  {
-    name: "University",
-    school: "Bahir Dar",
-    date: "Sep 2009 - Jun 2015",
-    description:
-      "At Mankusa High School, we are committed to preparing students for success in college, career, and beyond. With a rigorous academic program, a supportive learning environment, and a focus on personal growth and achievement, we empower students in grades 9 to 12 to discover their passions, pursue their dreams, and become confident, responsible leaders in a global society.",
-  },
-]);
+        educations {
+          id
+          name
+          description
+          education_level
+          start_date
+          end_date
+        }
 
-const experiences = ref([
-  {
-    title: "Intern",
-    company: "Minab IT Solution(Hahu Jobs)",
-    startDate: "June 2022",
-    endDate: "September 2022",
-    description:
-      "During my internship period at Minab IT Solutions from June 2022 to September 2022, I was immersed in an enriching environment where I honed my skills in front-end application development using Vue.js and Nuxt.js, particularly focusing on creating server-side rendered (SSR) applications. Additionally, I gained proficiency in Vite and Tailwind CSS for efficient and responsive UI development. On the backend side, I delved into backend development using a combination of Golang and Express.js. I worked extensively with databases, including Hasura, PostgreSQL, and SQL, learning how to design efficient schema and execute complex queries to optimize data retrieval and manipulation. Moreover, I had the opportunity to delve into API development using GraphQL, gaining hands-on experience in building robust and flexible APIs to facilitate smooth communication between the frontend and backend components of applications. ",
-  },
-]);
+        experiences {
+          id
+          name
+          position
+          description
+          start_date
+          end_date
+        }
+        services {
+          id
+          image
+          title
+          description
+          satisfied_cleint
+          year
+        }
+
+        projects {
+          id
+          image
+          title
+          description
+          date
+          size
+          link
+        }
+      }
+    }
+  `,
+  variable
+);
+
+const myInfo = computed(() => {
+  return result?.value?.user;
+});
+
+onError((error) => {
+  showMessage.value = error.message;
+  show.value = true;
+});
+
 const { handleSubmit, resetForm } = useForm();
 
 const submit = handleSubmit(async (value) => {
@@ -138,6 +128,40 @@ const toK = (value) => {
   }
   return value;
 };
+
+const getYearMonth = (value) => {
+  // Assuming you have the date as a string
+  if (!value) {
+    return "Present";
+  }
+  const dateString = value;
+
+  // Convert string to Date object
+  const dateObject = new Date(dateString);
+
+  // Get month and year as text
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const monthText = monthNames[dateObject.getMonth()]; // Month in text format
+  const year = dateObject.getFullYear(); // Year
+
+  // Concatenate month and year
+  const result = `${monthText} ${year}`;
+
+  return result; // Output: March 2024
+};
 </script>
 
 <template>
@@ -153,6 +177,13 @@ const toK = (value) => {
       ]">
       {{ showMessage }}
     </div>
+    <div
+      v-if="loadingMyInfoFetch && !myInfo"
+      class="w-full bg-primary-4 flex h-screen justify-center items-center">
+      <Icon
+        name="eos-icons:loading"
+        class="text-7xl text-primary"></Icon>
+    </div>
     <section
       class="w-full gap-10 min-h-[40rem] pt-[12rem] md:justify-between md:items-start items-center flex md:flex-row flex-col-reverse relative"
       id="home">
@@ -163,8 +194,11 @@ const toK = (value) => {
         <br />
         <h1
           class="lg:text-6xl md:text-4xl text-3xl -m-0 font-bold text-primary">
-          Hodadis Birhan
+          {{ myInfo.first_name }} {{ myInfo.last_name }}
         </h1>
+        <span class="text-2xl pt-4 font-semibold text-primary-dark/80">{{
+          myInfo?.status
+        }}</span>
         <p class="text-primary-dark mt-8 text-lg font-medium">
           Bachelor's Degree in Software Engineering At Bahir Dar University Sep
           2019 – July 2023 CGPA: 3.95
@@ -253,7 +287,7 @@ const toK = (value) => {
           <div
             class="md:w-[20rem] hidden md:block flex-1 items-center w-[10rem] border-2 border-solid border-primary-2 rounded-[100%] md:h-[20rem] h-[10rem]">
             <img
-              src="/hod.png"
+              :src="myInfo?.profile_image"
               alt="Photo"
               class="object-contain rounded-[100%] md:w-[20rem] md:h-[20rem] h-[10rem] w-[10rem] object-center" />
           </div>
@@ -269,16 +303,7 @@ const toK = (value) => {
             Full Stack Developer!
           </h3>
           <p class="text-lg text-primary-dark/80 font-medium">
-            Hello, I'm a passionate Fullstack Developer with over 2 years of
-            hands-on experience in building robust and scalable web
-            applications. With a blend of technical expertise, creative
-            problem-solving skills, and a keen eye for design, I specialize in
-            crafting innovative solutions that deliver exceptional user
-            experiences. My journey into the world of software development began
-            in 2020 year when I discovered my passion for coding and technology.
-            Since then, I've been on a relentless quest to expand my knowledge,
-            refine my skills, and stay at the forefront of industry trends and
-            best practices.
+            {{ myInfo?.about }}
           </p>
         </div>
       </div>
@@ -296,8 +321,8 @@ const toK = (value) => {
           class="flex flex-col gap-2"
           data-aos="fade-up"
           data-aos-duration="3000"
-          v-for="skill in skills"
-          :key="skill.name">
+          v-for="skill in myInfo?.skills"
+          :key="skill.id">
           <div
             class="flex justify-between text-primary-dark/80 text-sm font-medium">
             <span>{{ skill.name }}</span>
@@ -324,21 +349,21 @@ const toK = (value) => {
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:flex 2xl:flex-row 2xl:flex-wrap w-auto gap-6">
         <div
           class="px-3 md:w-[25rem] border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
-          v-for="service in services"
-          :key="service.name"
+          v-for="service in myInfo?.services"
+          :key="service.id"
           data-aos="fade-up"
           data-aos-duration="3000">
           <div
-            class="w-[4rem] h-[4rem] rounded-[100%] border border-solid bg-primary-5 border-primary-2 group-hover:border-primary-5 flex items-center justify-center">
+            class="w-[4rem] h-[4rem] rounded-[100%] border border-solid bg-primary-5 border-primary-2 group-hover:border-primary-5 flex items-center justify-center overflow-hidden">
             <img
-              class="object-center object-contain"
-              :src="service.icon"
-              :alt="service.name" />
+              class="object-center object-cover w-[4rem] h-[4rem]"
+              :src="service.image"
+              :alt="service.title" />
           </div>
 
           <h3
             class="md:text-2xl text-xl group-hover:text-primary-5 font-bold text-primary">
-            {{ service.name }}
+            {{ service.title }}
           </h3>
 
           <p
@@ -365,21 +390,22 @@ const toK = (value) => {
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-out"
-            v-for="education in educations"
-            :key="education.name">
+            v-for="education in myInfo?.educations"
+            :key="education.id">
             <div class="flex items-center gap-2">
               <Icon
                 name="material-symbols:calendar-month"
                 class="text-primary group-hover:text-primary-5"></Icon>
               <span
                 class="text-xs font-medium text-primary-dark/50 group-hover:text-primary-5"
-                >{{ education.date }}</span
+                >{{ getYearMonth(education.start_date) }}-
+                {{ getYearMonth(education.end_date) }}</span
               >
             </div>
 
             <h3
               class="text-xl p-0 m-0 font-semibold text-primary/50 group-hover:text-primary-5">
-              {{ education.name }} - {{ education.school }}
+              {{ education.name }} - {{ education.education_level }}
             </h3>
             <p
               class="text-primary-dark/50 font-medium md:text-sm xl:text-base tracking-wide text-xs group-hover:text-primary-5">
@@ -403,21 +429,23 @@ const toK = (value) => {
             data-aos="fade-left"
             data-aos-offset="300"
             data-aos-easing="ease-in-out"
-            v-for="experience in experiences"
-            :key="experience.title">
+            v-for="experience in myInfo?.experiences"
+            :key="experience.id">
             <div class="flex items-center gap-2">
               <Icon
                 name="material-symbols:calendar-month"
                 class="text-primary group-hover:text-primary-5 text-primary-dark/60"></Icon>
               <span
                 class="text-xs font-medium text-primary-dark/50 group-hover:text-primary-5"
-                >{{ experience.startDate }}-{{ experience.endDate }}</span
+                >{{ getYearMonth(experience.start_date) }}-{{
+                  getYearMonth(experience.end_date)
+                }}</span
               >
             </div>
 
             <h3
               class="text-xl p-0 m-0 font-semibold text-primary/50 group-hover:text-primary-5">
-              {{ experience.title }}-{{ experience.company }}
+              {{ experience.position }}-{{ experience.name }}
             </h3>
             <p
               class="text-primary-dark/50 font-medium tracking-wide md:text-sm text-xs xl:text-base group-hover:text-primary-5">
@@ -438,19 +466,19 @@ const toK = (value) => {
       </h2>
 
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 2xl:flex 2xl:flex-row 2xl:flex-wrap gap-6 place-content-center justify-center">
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10 place-content-center justify-center">
         <div
-          class="px-3 md:w-[30rem] w-[90%] border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
-          v-for="project in projects"
+          class="px-3 border border-solid border-primary-5 group hover:bg-primary-2 hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
+          v-for="project in myInfo?.projects"
           :key="project.title"
           data-aos="fade-up"
           data-aos-duration="3000">
           <div
             class="w-full h-[16rem] border-primary-2 group-hover:border-primary-5 flex items-center justify-center">
             <img
-              class="object-center rounded-md object-cover w-full h-full"
+              class="object-center rounded-md object-contain w-full h-full"
               :src="project.image"
-              :alt="project.title" />
+              :alt="project.id" />
           </div>
 
           <h2
@@ -468,7 +496,7 @@ const toK = (value) => {
                 name="material-symbols:calendar-month"
                 class="group-hover:text-primary-5 text-primary text-sm"></Icon>
               <span class="text-xs group-hover:text-primary-5 font-medium">{{
-                project.date
+                getYearMonth(project.date)
               }}</span>
             </div>
             <div class="flex items-center justify-center gap-1">
@@ -507,26 +535,26 @@ const toK = (value) => {
           <Icon
             name="material-symbols:call-sharp"
             class="text-lg text-primary"></Icon>
-          <span class="text-primary-dark/80 text-sm lg:text-base"
-            >+251995183367</span
-          >
+          <span class="text-primary-dark/80 text-sm lg:text-base">{{
+            myInfo?.phone
+          }}</span>
         </div>
         <div class="flex flex-row gap-4">
           <Icon
             name="material-symbols:mail-rounded"
             class="text-lg text-primary">
           </Icon>
-          <span class="text-primary-dark/80 text-sm lg:text-base"
-            >hodadisbirhan80@gmail.com</span
-          >
+          <span class="text-primary-dark/80 text-sm lg:text-base">{{
+            myInfo?.email
+          }}</span>
         </div>
         <div class="flex flex-row gap-4">
           <Icon
             name="material-symbols:location-on-rounded"
             class="text-lg text-primary"></Icon>
-          <span class="text-primary-dark/80 text-sm lg:text-base"
-            >Addis Ababa, Ethiopia</span
-          >
+          <span class="text-primary-dark/80 text-sm lg:text-base">{{
+            myInfo?.address
+          }}</span>
         </div>
       </div>
       <form

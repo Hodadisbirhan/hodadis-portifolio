@@ -10,18 +10,23 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
     "@vee-validate/rules": "^4.12.6",
     "aos": "3.0.0-beta.6",
     "jspdf": "^2.5.1",
     "nodemailer": "^6.9.12",
     "nuxt": "^3.10.3",
+    "pinia": "^2.1.7",
     "vee-validate": "^4.12.6",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@nuxtjs/apollo": "5.0.0-alpha.13",
+    "@rollup/plugin-graphql": "^2.0.4",
     "autoprefixer": "^10.4.18",
     "nuxt-icon": "^0.6.8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "vite-plugin-graphql-loader": "^3.0.1"
   }
 }
