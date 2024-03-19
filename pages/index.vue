@@ -567,7 +567,7 @@ const getYearMonth = (value) => {
           Contact Me
         </h3>
 
-        <div class="flex flex-col gap-4 px-8 py-3">
+        <div class="flex flex-col gap-4 md:px-8 px-3 py-3">
           <HField
             id="name"
             type="text"
