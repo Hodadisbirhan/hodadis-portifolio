@@ -391,7 +391,7 @@ const getYearMonth = (value) => {
             data-aos-easing="ease-in-out"
             v-for="education in myInfo?.educations"
             :key="education.id">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 pb-2">
               <Icon
                 name="material-symbols:calendar-month"
                 class="text-primary"></Icon>
@@ -428,7 +428,7 @@ const getYearMonth = (value) => {
             data-aos-easing="ease-in-out"
             v-for="experience in myInfo?.experiences"
             :key="experience.id">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 pb-2">
               <Icon
                 name="material-symbols:calendar-month"
                 class="text-primary"></Icon>
