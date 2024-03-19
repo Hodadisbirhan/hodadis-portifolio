@@ -259,10 +259,12 @@ const getYearMonth = (value) => {
           </a>
         </div>
 
-        <button
-          class="font-semibold outline-none mt-4 px-12 py-4 hover:bg-transparent hover:text-primary/80 border-primary/80 border-2 border-solid rounded-md shadow-none bg-primary/80 cursor-pointer text-lg text-primary-5">
+        <a
+          href="file/my-resume.pdf"
+          download="Hodadis resume.pdf"
+          class="font-semibold no-underline outline-none mt-4 px-12 py-4 hover:bg-transparent hover:text-primary/80 border-primary/80 border-2 border-solid rounded-md shadow-none bg-primary/80 cursor-pointer text-lg text-primary-5">
           Download CV
-        </button>
+        </a>
       </div>
       <div
         class="flex-1 justify-end flex relative"
