@@ -350,7 +350,7 @@ const getYearMonth = (value) => {
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:flex 2xl:flex-row 2xl:flex-wrap w-auto gap-6">
         <div
-          class="px-3 md:w-[25rem] border-[1.5px] border-solid border-primary-5 group hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
+          class="px-3 max-w-[25rem] border-[1.5px] border-solid border-primary-5 group hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
           v-for="service in myInfo?.services"
           :key="service.id"
           data-aos="fade-up"
