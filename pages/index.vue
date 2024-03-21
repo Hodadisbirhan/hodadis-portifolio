@@ -463,7 +463,7 @@ const getYearMonth = (value) => {
       </h2>
 
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10 place-content-center justify-center">
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-10 place-content-center justify-center">
         <div
           class="px-3 border-[1.5px] border-solid border-primary-5 group hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
           v-for="project in myInfo?.projects"
