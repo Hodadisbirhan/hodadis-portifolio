@@ -1,11 +1,11 @@
 <template>
   <div
-    class="max-w-[1920px] overflow-hidden bg-slate-200 pb-10 md:px-14 px-2 mx-auto">
+    class="max-w-[1920px] overflow-hidden bg-slate-200 pb-10 md:px-14 px-4 mx-auto">
     <section>
       <div class="skewed opacity-20 mix-blend-multiply"></div>
     </section>
     <header
-      class="fixed backdrop-blur-3xl z-40 max-w-[1920px] top-0 mx-auto md:px-14 px-2 h-[6rem] drop-shadow bg-slate-200/95 left-0 right-0 flex justify-between items-center">
+      class="fixed backdrop-blur-3xl z-40 max-w-[1920px] top-0 mx-auto md:px-14 px-4 h-[6rem] drop-shadow bg-slate-200/95 left-0 right-0 flex justify-between items-center">
       <nav class="flex justify-between items-center w-full">
         <a
           href="https://hodadis.netlify.app"

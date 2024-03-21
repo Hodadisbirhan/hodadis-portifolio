@@ -236,7 +236,7 @@ const getYearMonth = (value) => {
           </a>
 
           <a
-            href="https://t.me/@Hodybi"
+            href="https://t.me/Hodybi"
             class="w-[2rem] group h-[2rem] rounded-[100%] border-2 border-primary/80 hover:bg-primary/80 border-solid flex cu justify-center items-center"
             aria-hidden="true"
             target="_blank"
@@ -318,7 +318,7 @@ const getYearMonth = (value) => {
         class="text-primary text-center lg:text-5xl md:text-4xl text-3xl font-bold">
         Skills
       </h2>
-      <div class="grid md:grid-cols-2 grid-cols-1 gap-16">
+      <div class="grid md:grid-cols-2 grid-cols-1 md:gap-16 gap-8">
         <div
           class="flex flex-col gap-2"
           data-aos="fade-up"
@@ -330,7 +330,7 @@ const getYearMonth = (value) => {
             <span>{{ skill.name }}</span>
             <span>{{ skill.level }}% </span>
           </div>
-          <div class="relative w-full h-[1rem]">
+          <div class="relative w-full h-[0.7rem] xl:h-[0.8rem] 2xl:h-[0.87rem]">
             <div
               class="absolute rounded-full z-10 bg-primary top-0 left-0 h-full"
               :style="{ width: skill.level + '%' }"></div>
@@ -350,7 +350,7 @@ const getYearMonth = (value) => {
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:flex 2xl:flex-row 2xl:flex-wrap w-auto gap-6">
         <div
-          class="px-3 md:w-[25rem] border border-solid border-primary-5 group hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
+          class="px-3 md:w-[25rem] border-[1.5px] border-solid border-primary-5 group hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
           v-for="service in myInfo?.services"
           :key="service.id"
           data-aos="fade-up"
@@ -387,7 +387,7 @@ const getYearMonth = (value) => {
             Education
           </h2>
           <div
-            class="relative group flex flex-col px-3 py-4 border border-solid border-primary-5 hover:border-primary-2 bg-primary-4 transition-all duration-300 rounded-md"
+            class="relative group flex flex-col px-3 py-4 border-[1.5px] border-solid border-primary-5 hover:border-primary-2 bg-primary-4 transition-all duration-300 rounded-md"
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-out"
@@ -424,7 +424,7 @@ const getYearMonth = (value) => {
             Experiance
           </h2>
           <div
-            class="relative group flex flex-col px-3 py-4 border border-solid border-primary-5 hover:border-primary-2 rounded-md transition-all duration-300 bg-primary-4"
+            class="relative group flex flex-col px-3 py-4 border-[1.5px] border-solid border-primary-5 hover:border-primary-2 rounded-md transition-all duration-300 bg-primary-4"
             data-aos="fade-left"
             data-aos-offset="300"
             data-aos-easing="ease-in-out"
@@ -465,7 +465,7 @@ const getYearMonth = (value) => {
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-10 place-content-center justify-center">
         <div
-          class="px-3 border border-solid border-primary-5 group hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
+          class="px-3 border-[1.5px] border-solid border-primary-5 group hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
           v-for="project in myInfo?.projects"
           :key="project.title"
           data-aos="fade-up"
@@ -549,7 +549,7 @@ const getYearMonth = (value) => {
         </div>
       </div>
       <form
-        class="flex-1 px-3 py-14 bg-primary-4 border border-primary-5 border-solid rounded-md"
+        class="flex-1 px-3 py-14 bg-primary-4 border-[1.5px] border-primary-5 border-solid rounded-md"
         @submit.prevent="submit"
         data-aos="fade-left"
         data-aos-offset="400"
@@ -591,7 +591,11 @@ const getYearMonth = (value) => {
             <button
               :disabled="loading"
               type="submit"
-              class="px-10 py-4 disabled:cursor-wait disabled:hover:bg-primary-2 border-none bg-primary-2 hover:bg-primary cursor-pointer text-primary-5 rounded-md font-medium">
+              class="px-10 py-4 disabled:cursor-wait disabled:hover:bg-primary-2 border-none bg-primary/80 hover:bg-primary cursor-pointer text-primary-5 rounded-md font-medium flex justify-center items-center gap-2">
+              <Icon
+                v-if="loading"
+                name="eos-icons:loading"
+                class="text-sm text-primary-5"></Icon>
               Send
             </button>
           </div>
