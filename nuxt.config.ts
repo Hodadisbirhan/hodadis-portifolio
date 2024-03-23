@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     hasuraEndPoint: "",
     public: {
       hasuraEndPoint: "",
-      accessToken: process.env.ACCESS_TOKEN,
+      accessToken: "",
     },
   },
   modules: ["nuxt-icon", "@pinia/nuxt", "@nuxtjs/apollo"],
