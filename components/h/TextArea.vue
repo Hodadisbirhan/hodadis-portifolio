@@ -3,20 +3,20 @@
     <label
       :for="id"
       v-if="label"
-      class="text-base text-gray-dark font-medium w-full"
+      class="text-base text-gray-dark dark:text-primary-lite font-medium w-full"
       >{{ label }}</label
     >
     <div class="flex relative">
       <textarea
         :name="name"
-        class="placeholder:text-sm text-base font-normal text-gray-600 outline-none border-[0.15rem] border-gray-300 border-solid w-full min-h-[7rem] bg-primary-5 px-2 hover:border-blue-500 focus:border-blue-600 rounded-md placeholder:text-gray-600/55"
+        class="placeholder:text-sm text-base font-normal dark:text-primary-lite dark:placeholder:text-primary-lite dark:bg-secondary-lite-2 text-gray-600 outline-none border-[0.15rem] border-gray-300 border-solid w-full min-h-[7rem] bg-primary-5 px-2 hover:border-blue-500 focus:border-blue-600 rounded-md placeholder:text-gray-600/55"
         :id="id"
         v-model="dataValue"
         :placeholder="placeholder"></textarea>
 
       <span
         v-if="errorMessage"
-        class="text-xs text-red-800 absolute -bottom-2 bg-white left-1"
+        class="text-xs text-red-800 dark:bg-primary-lite absolute -bottom-2 bg-white left-1"
         >{{ errorMessage }}</span
       >
     </div>
