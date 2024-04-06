@@ -206,4 +206,21 @@ const route = useRoute();
 const activeTag = ref(route.hash.slice(1));
 
 </script>
-
+<style>
+header {
+  backdrop-filter: blur(64px);
+}
+.skewed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #003399;
+  z-index: 0;
+  transform: skewY(17deg);
+  transform-origin: top right;
+}
+</style>
