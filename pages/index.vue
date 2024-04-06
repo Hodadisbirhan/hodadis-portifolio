@@ -181,7 +181,7 @@ const getYearMonth = (value) => {
       v-if="loadingMyInfoFetch && !myInfo"
       class="w-full bg-primary-4 flex h-screen justify-center items-center">
       <Icon
-        name="eos-icons:loading"
+        name="eos-icons:loading" 
         class="text-7xl text-primary"></Icon>
     </div>
     <section
@@ -190,16 +190,16 @@ const getYearMonth = (value) => {
       <div
         class="flex flex-1 flex-col md:items-start items-center"
         data-aos="fade-right">
-        <span class="text-2xl text-primary-1 font-bold">Hello, I am </span>
+        <span class="text-2xl text-primary-1 font-bold dark:text-primary-3">Hello, I am </span>
         <br />
         <h1
           class="lg:text-6xl md:text-4xl text-3xl -m-0 font-bold text-primary">
           {{ myInfo?.first_name }} {{ myInfo?.last_name }}
         </h1>
-        <span class="text-2xl pt-4 font-semibold text-primary-dark/80">{{
+        <span class="text-2xl pt-4 dark:text-primary-lite font-semibold text-primary-dark/80">{{
           myInfo?.status
         }}</span>
-        <p class="text-primary-dark mt-8 text-lg font-medium">
+        <p class="text-primary-dark mt-8 dark:text-primary-lite text-lg font-medium">
           Bachelor's Degree in Software Engineering At Bahir Dar University Sep
           2019 – July 2023 CGPA: 3.95
         </p>
@@ -210,7 +210,7 @@ const getYearMonth = (value) => {
             target="_blank"
             ><Icon
               name="teenyicons:github-solid"
-              class="text-primary/80 group-hover:text-primary-5"
+              class="text-primary/80 dark:text-primary-lite group-hover:text-primary-5"
               aria-hidden="true" />
             <span class="sr-only">Github</span>
           </a>
@@ -221,7 +221,7 @@ const getYearMonth = (value) => {
             target="_blank"
             ><Icon
               name="mdi:linkedin"
-              class="text-primary/80 group-hover:text-primary-5"
+              class="text-primary/80 dark:text-primary-lite group-hover:text-primary-5"
           /></a>
 
           <a
@@ -230,7 +230,7 @@ const getYearMonth = (value) => {
             target="_blank"
             ><Icon
               name="mdi:instagram"
-              class="text-primary/80 group-hover:text-primary-5"
+              class="text-primary/80 dark:text-primary-lite group-hover:text-primary-5"
               aria-hidden="true" />
             <span class="sr-only">Instagram</span>
           </a>
@@ -242,7 +242,7 @@ const getYearMonth = (value) => {
             target="_blank"
             ><Icon
               name="mdi:telegram"
-              class="text-primary/80 group-hover:text-primary-5" />
+              class="text-primary/80 dark:text-primary-lite group-hover:text-primary-5" />
             <span class="sr-only">Telegram</span>
           </a>
 
@@ -252,7 +252,7 @@ const getYearMonth = (value) => {
             target="_blank"
             ><Icon
               name="teenyicons:phone-solid"
-              class="text-primary/80 group-hover:text-primary-5"
+              class="text-primary/80 dark:text-primary-lite group-hover:text-primary-5"
               aria-hidden="true" />
 
             <span class="sr-only">Phone</span>
@@ -304,7 +304,7 @@ const getYearMonth = (value) => {
             class="lg:text-3xl md:text-2xl text-xl font-bold text-primary-lite -mt-1">
             Full Stack Developer!
           </h3>
-          <p class="text-lg text-primary-dark/80 font-medium">
+          <p class="text-lg text-primary-dark/80 dark:text-primary-lite font-medium">
             {{ myInfo?.about }}
           </p>
         </div>
@@ -326,7 +326,7 @@ const getYearMonth = (value) => {
           v-for="skill in myInfo?.skills"
           :key="skill.id">
           <div
-            class="flex justify-between text-primary-dark/80 text-sm font-medium">
+            class="flex justify-between dark:text-primary-lite text-primary-dark/80 text-sm font-medium">
             <span>{{ skill.name }}</span>
             <span>{{ skill.level }}% </span>
           </div>
@@ -335,7 +335,7 @@ const getYearMonth = (value) => {
               class="absolute rounded-full z-10 bg-primary top-0 left-0 h-full"
               :style="{ width: skill.level + '%' }"></div>
             <div
-              class="absolute bg-primary-4 rounded-full top-0 w-full h-full left-0"></div>
+              class="absolute bg-primary-4 dark:bg-primary-lite rounded-full top-0 w-full h-full left-0"></div>
           </div>
         </div>
       </div>
@@ -350,7 +350,7 @@ const getYearMonth = (value) => {
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:flex 2xl:flex-row 2xl:flex-wrap w-auto gap-6">
         <div
-          class="px-3 2xl:max-w-[27rem]  border-[1.5px] border-solid border-primary-5 group hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
+          class="px-3 2xl:max-w-[27rem] dark:bg-secondary-lite dark:text-primary-lite dark:border-secondary-lite-2 dark:hover:border-primary-2  border-[1.5px] border-solid border-primary-5 group hover:border-primary-2 transition-all duration-300 py-2 rounded-md bg-primary-4 place-content-center"
           v-for="service in myInfo?.services"
           :key="service.id"
           data-aos="fade-up"
@@ -368,7 +368,7 @@ const getYearMonth = (value) => {
           </h3>
 
           <p
-            class="font-medium text-primary-dark/50 tracking-wide text-xs md:text-sm xl:text-base">
+            class="font-medium dark:text-primary-lite text-primary-dark/50 tracking-wide text-xs md:text-sm xl:text-base">
             {{ service.description }}
           </p>
         </div>
@@ -387,7 +387,7 @@ const getYearMonth = (value) => {
             Education
           </h2>
           <div
-            class="relative group flex flex-col px-3 py-4 border-[1.5px] border-solid border-primary-5 hover:border-primary-2 bg-primary-4 transition-all duration-300 rounded-md"
+            class="relative group flex flex-col px-3 py-4 border-[1.5px] border-solid border-primary-5 hover:border-primary-2 dark:hover:border-primary-2 dark:border-secondary-lite-2 dark:bg-secondary-lite bg-primary-4 transition-all duration-300 rounded-md"
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-out"
@@ -397,21 +397,21 @@ const getYearMonth = (value) => {
               <Icon
                 name="material-symbols:calendar-month"
                 class="text-primary"></Icon>
-              <span class="text-xs font-medium text-primary-dark/50"
+              <span class="text-xs dark:text-primary-lite font-medium text-primary-dark/50"
                 >{{ getYearMonth(education.start_date) }}-
                 {{ getYearMonth(education.end_date) }}</span
               >
             </div>
 
-            <h3 class="text-xl p-0 m-0 font-semibold text-primary/50">
+            <h3 class="text-xl p-0 m-0 font-semibold text-primary/50 dark:text-primary">
               {{ education.name }} - {{ education.education_level }}
             </h3>
             <p
-              class="text-primary-dark/50 font-medium md:text-sm xl:text-base tracking-wide text-xs">
+              class="text-primary-dark/50 dark:text-primary-lite font-medium md:text-sm xl:text-base tracking-wide text-xs">
               {{ education.description }}
             </p>
             <span
-              class="absolute -top-1 md:block hidden -left-[2.7rem] w-[1rem] h-[1rem] rounded-[100%] border-primary-2 border border-solid bg-primary-4 group-hover:bg-primary-2"></span>
+              class="absolute -top-1 md:block hidden -left-[2.7rem] w-[1rem] h-[1rem]  dark:bg-secondary-lite-2  rounded-[100%] border-primary-2 border border-solid bg-primary-4 group-hover:bg-primary-2"></span>
           </div>
         </div>
       </div>
@@ -424,7 +424,7 @@ const getYearMonth = (value) => {
             Experiance
           </h2>
           <div
-            class="relative group flex flex-col px-3 py-4 border-[1.5px] border-solid border-primary-5 hover:border-primary-2 rounded-md transition-all duration-300 bg-primary-4"
+            class="relative group flex flex-col px-3 py-4 border-[1.5px] border-solid border-primary-5 hover:border-primary-2 rounded-md transition-all dark:hover:border-primary-2 dark:bg-secondary-lite dark:border-secondary-lite-2 duration-300 bg-primary-4"
             data-aos="fade-left"
             data-aos-offset="300"
             data-aos-easing="ease-in-out"
@@ -434,18 +434,18 @@ const getYearMonth = (value) => {
               <Icon
                 name="material-symbols:calendar-month"
                 class="text-primary"></Icon>
-              <span class="text-xs font-medium text-primary-dark/50"
+              <span class="text-xs font-medium dark:text-primary-lite text-primary-dark/50"
                 >{{ getYearMonth(experience.start_date) }}-{{
                   getYearMonth(experience.end_date)
                 }}</span
               >
             </div>
 
-            <h3 class="text-xl p-0 m-0 font-semibold text-primary/50">
+            <h3 class="text-xl p-0 m-0 dark:text-primary font-semibold text-primary/50">
               {{ experience.position }}-{{ experience.name }}
             </h3>
             <p
-              class="text-primary-dark/50 font-medium tracking-wide md:text-sm text-xs xl:text-base">
+              class="text-primary-dark/50 dark:text-primary-lite font-medium tracking-wide md:text-sm text-xs xl:text-base">
               {{ experience.description }}
             </p>
             <span
@@ -465,7 +465,7 @@ const getYearMonth = (value) => {
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-10 place-content-center justify-center">
         <div
-          class="px-3 border-[1.5px] border-solid border-primary-5 group hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
+          class="px-3 border-[1.5px] border-solid dark:hover:border-primary-2 dark:border-secondary-lite-2 dark:bg-secondary-lite border-primary-5 group hover:border-primary-2 py-2 rounded-md transition-all duration-300 bg-primary-4 flex flex-col"
           v-for="project in myInfo?.projects"
           :key="project.title"
           data-aos="fade-up"
@@ -483,7 +483,7 @@ const getYearMonth = (value) => {
           </h2>
 
           <p
-            class="font-medium text-primary-dark/50 tracking-wide text-xs md:text-sm xl:text-base text-pretty first-letter:uppercase">
+            class="font-medium  dark:text-primary-lite text-primary-dark/50 tracking-wide text-xs md:text-sm xl:text-base text-pretty first-letter:uppercase">
             {{ project.description }}
           </p>
           <div class="flex flex-1 items-end justify-between text-primary-2">
@@ -526,7 +526,7 @@ const getYearMonth = (value) => {
           <Icon
             name="material-symbols:call-sharp"
             class="text-lg text-primary"></Icon>
-          <span class="text-primary-dark/80 text-sm lg:text-base">{{
+          <span class="text-primary-dark/80 text-sm dark:text-primary-lite lg:text-base">{{
             myInfo?.phone
           }}</span>
         </div>
@@ -535,7 +535,7 @@ const getYearMonth = (value) => {
             name="material-symbols:mail-rounded"
             class="text-lg text-primary">
           </Icon>
-          <span class="text-primary-dark/80 text-sm lg:text-base">{{
+          <span class="text-primary-dark/80 text-sm dark:text-primary-lite lg:text-base">{{
             myInfo?.email
           }}</span>
         </div>
@@ -543,13 +543,13 @@ const getYearMonth = (value) => {
           <Icon
             name="material-symbols:location-on-rounded"
             class="text-lg text-primary"></Icon>
-          <span class="text-primary-dark/80 text-sm lg:text-base">{{
+          <span class="text-primary-dark/80 dark:text-primary-lite text-sm lg:text-base">{{
             myInfo?.address
           }}</span>
         </div>
       </div>
       <form
-        class="flex-1 px-3 py-14 bg-primary-4 border-[1.5px] border-primary-5 border-solid rounded-md"
+        class="flex-1  dark:border-secondary-lite-2 dark:bg-secondary-lite px-3 py-14 bg-primary-4 border-[1.5px] border-primary-5 border-solid rounded-md"
         @submit.prevent="submit"
         data-aos="fade-left"
         data-aos-offset="400"
