@@ -3,7 +3,7 @@
     <label
       :for="id"
       v-if="label"
-      class="text-base text-gray-dark font-medium w-full"
+      class="text-base text-gray-dark dark:text-primary-lite font-medium w-full"
       >{{ label }}</label
     >
     <div class="flex relative">
@@ -24,7 +24,7 @@
       <input
         :name="name"
         :class="[
-          'placeholder:text-sm  text-base font-normal text-gray-600 outline-none border-[0.15rem]  border-gray-300 border-solid  w-full hover:border-blue-500 h-[3rem] focus:border-blue-600 rounded-md placeholder:text-gray-600/55',
+          'placeholder:text-sm dark:bg-secondary-lite-2  dark:placeholder:text-primary-lite dark:text-primary-lite dark:border-primary-lite text-base font-normal text-gray-600 outline-none border-[0.15rem]  border-gray-300 border-solid  w-full hover:border-blue-500 h-[3rem] focus:border-blue-600 rounded-md placeholder:text-gray-600/55',
           preIcon ? (postIcon ? 'px-10' : 'pl-10 px-3') : 'px-3',
         ]"
         :type="type"
@@ -34,7 +34,7 @@
 
       <span
         v-if="errorMessage"
-        class="text-xs text-red-800 absolute -bottom-2 bg-white left-1"
+        class="text-xs text-red-800  dark:bg-primary-lite px-1 absolute -bottom-2 bg-white left-1"
         >{{ errorMessage }}</span
       >
     </div>
