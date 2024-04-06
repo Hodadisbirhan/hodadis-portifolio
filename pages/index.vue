@@ -449,7 +449,7 @@ const getYearMonth = (value) => {
               {{ experience.description }}
             </p>
             <span
-              class="absolute -top-1 md:block hidden -left-[2.7rem] w-[1rem] h-[1rem] rounded-[100%] border-primary-2 border border-solid bg-primary-4 group-hover:bg-primary-2"></span>
+              class="absolute dark:bg-secondary-lite-2 -top-1 md:block hidden -left-[2.7rem] w-[1rem] h-[1rem] rounded-[100%] border-primary-2 border border-solid bg-primary-4 group-hover:bg-primary-2"></span>
           </div>
         </div>
       </div>
