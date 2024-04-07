@@ -262,7 +262,7 @@ const getYearMonth = (value) => {
         <a
           href="file/my-resume.pdf"
           download="Hodadis resume.pdf"
-          class="font-semibold no-underline outline-none mt-4 px-10 py-3 hover:opacity-80 focus:ring-2 focus:ring-offset-primary/80 ring-offset-2   border-primary/80 border-2 border-solid rounded-md shadow-none bg-primary/80 cursor-pointer text-base text-primary-5">
+          class="font-semibold no-underline outline-none mt-4 px-10 py-3 hover:opacity-80 focus:ring-2 focus:ring-primary/80 focus:ring-offset-primary/80 ring-offset-2   border-primary/80 border-2 border-solid rounded-md shadow-none bg-primary/80 cursor-pointer text-base text-primary-5">
           Download CV
         </a>
       </div>
