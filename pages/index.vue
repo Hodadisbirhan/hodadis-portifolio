@@ -473,7 +473,7 @@ const getYearMonth = (value) => {
           <div
             class="w-full max-h-[16rem] border-primary-2 flex items-center justify-center">
             <img
-              class="object-center rounded-md object-contain w-full h-[16rem]"
+              class="object-center rounded-md object-contain w-full  h-full min-h-[16rem]"
               :src="project.image"
               :alt="project.id" />
           </div>
