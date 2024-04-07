@@ -24,7 +24,7 @@
       <input
         :name="name"
         :class="[
-          'placeholder:text-sm dark:bg-secondary-lite-2 dark:text-primary-4 dark:hover:border-blue-600 dark:placeholder:text-primary-lite  dark:border-primary-lite text-base font-normal text-gray-600 outline-none border-[0.15rem]  border-gray-300 border-solid  w-full hover:border-blue-500 h-[3rem] focus:border-blue-600 rounded-md placeholder:text-gray-600/55',
+          'placeholder:text-sm dark:bg-secondary-lite-2 dark:text-primary-4 dark:hover:border-blue-600 dark:placeholder:text-primary-lite  dark:border-secondary-lite-2/80 text-base font-normal text-gray-600 outline-none border-[0.15rem]  border-gray-300 border-solid  w-full hover:border-blue-500 h-[3rem] focus:border-blue-600 rounded-md placeholder:text-gray-600/55',
           preIcon ? (postIcon ? 'px-10' : 'pl-10 px-3') : 'px-3',
         ]"
         :type="type"
