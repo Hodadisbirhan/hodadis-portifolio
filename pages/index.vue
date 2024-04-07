@@ -190,10 +190,10 @@ const getYearMonth = (value) => {
       <div
         class="flex flex-1 flex-col md:items-start items-center"
         data-aos="fade-right">
-        <span class="text-2xl text-primary-1 font-bold dark:text-primary-3">Hello, I am </span>
+        <span class="md:text-2xl text-xl text-primary-1 font-bold dark:text-primary-3">Hello, I am </span>
         <br />
         <h1
-          class="lg:text-6xl md:text-4xl text-3xl -m-0 font-bold text-primary">
+          class="lg:text-4xl md:text-3xl text-2xl -m-0 font-bold text-primary">
           {{ myInfo?.first_name }} {{ myInfo?.last_name }}
         </h1>
         <span class="text-2xl pt-4 dark:text-primary-lite font-semibold text-primary-dark/80">{{
@@ -262,7 +262,7 @@ const getYearMonth = (value) => {
         <a
           href="file/my-resume.pdf"
           download="Hodadis resume.pdf"
-          class="font-semibold no-underline outline-none mt-4 px-12 py-4 hover:bg-transparent hover:text-primary/80 border-primary/80 border-2 border-solid rounded-md shadow-none bg-primary/80 cursor-pointer text-lg text-primary-5">
+          class="font-semibold no-underline outline-none mt-4 px-10 py-3 hover:opacity-80 focus:ring-2 ring-primary/80 ring-offset-2  hover:text-primary/80 border-primary/80 border-2 border-solid rounded-md shadow-none bg-primary/80 cursor-pointer text-base text-primary-5">
           Download CV
         </a>
       </div>
