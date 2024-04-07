@@ -421,7 +421,7 @@ const getYearMonth = (value) => {
         <div class="relative flex flex-col gap-8">
           <h2
             class="lg:text-5xl md:text-4xl text-3xl font-bold text-primary absolute -top-28 left-0">
-            Experiance
+            Experience
           </h2>
           <div
             class="relative group flex flex-col px-3 py-4 border-[1.5px] border-solid border-primary-5 hover:border-primary-2 rounded-md transition-all dark:hover:border-primary-2 dark:bg-secondary-lite dark:border-secondary-lite-2 duration-300 bg-primary-4"
@@ -471,9 +471,9 @@ const getYearMonth = (value) => {
           data-aos="fade-up"
           data-aos-duration="3000">
           <div
-            class="w-full h-[16rem] border-primary-2 flex items-center justify-center">
+            class="w-full max-h-[16rem] border-primary-2 flex items-center justify-center">
             <img
-              class="object-center rounded-md object-contain w-full h-full"
+              class="object-center rounded-md object-contain w-full h-[16rem]"
               :src="project.image"
               :alt="project.id" />
           </div>
