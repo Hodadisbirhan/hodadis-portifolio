@@ -273,7 +273,7 @@ const getYearMonth = (value) => {
           class="md:w-[20rem] w-[10rem] border-2 border-solid border-primary-5 rounded-[100%] md:h-[20rem] h-[10rem] z-30">
           <img
             :src="myInfo?.profile_image"
-            alt="Photo"
+            alt="hodadis profile Photo"
             class="object-contain rounded-[100%] md:w-[20rem] md:h-[20rem] h-[10rem] w-[10rem] object-center" />
         </div>
       </div>
@@ -290,7 +290,7 @@ const getYearMonth = (value) => {
             class="md:w-[20rem] hidden md:block flex-1 items-center w-[10rem] border-2 border-solid border-primary-2 rounded-[100%] md:h-[20rem] h-[10rem]">
             <img
               :src="myInfo?.profile_image"
-              alt="Photo"
+              alt="hodadis profile Photo"
               class="object-contain rounded-[100%] md:w-[20rem] md:h-[20rem] h-[10rem] w-[10rem] object-center" />
           </div>
         </div>
@@ -475,7 +475,7 @@ const getYearMonth = (value) => {
             <img
               class="object-center rounded-md object-contain w-full"
               :src="project.image"
-              :alt="project.id" />
+              :alt="project.title" />
           </div>
 
           <h2 class="md:text-2xl text-xl font-bold text-primary">
