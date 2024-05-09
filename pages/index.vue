@@ -39,7 +39,7 @@ const {
           level
         }
 
-        educations {
+        educations(order_by:{start_date:asc}) {
           id
           name
           description
@@ -48,7 +48,7 @@ const {
           end_date
         }
 
-        experiences {
+        experiences(order_by:{start_date:desc}) {
           id
           name
           position
